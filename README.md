@@ -1,6 +1,6 @@
 ### Overview
 
-This adds js, javascript, and jint transforms to Transformalize using [Jint](https://github.com/sebastienros/jint).  It is a plug-in compatible with Transformalize 0.3.3-beta.
+This adds a `jint` (javascript) transform to Transformalize using [Jint](https://github.com/sebastienros/jint).  It is a plug-in compatible with Transformalize 0.3.3-beta.
 
 Build the Autofac project and put it's output into Transformalize's *plugins* folder.
 
@@ -18,7 +18,7 @@ Build the Autofac project and put it's output into Transformalize's *plugins* fo
                 <add name="number" type="int" />
             </fields>
             <calculated-fields>
-                <add name="evaluated" t='js(text + " " + number)' />
+                <add name="evaluated" t='jint(text + " " + number)' />
             </calculated-fields>
         </add>
     </entities>

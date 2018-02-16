@@ -161,13 +161,7 @@ namespace Transformalize.Transforms.Jint {
 
         public override IEnumerable<OperationSignature> GetSignatures() {
             return new[] {
-                new OperationSignature("js") {
-                    Parameters = new List<OperationParameter> {new OperationParameter("script")}
-                },
                 new OperationSignature("jint") {
-                    Parameters = new List<OperationParameter> {new OperationParameter("script")}
-                },
-                new OperationSignature("javascript") {
                     Parameters = new List<OperationParameter> {new OperationParameter("script")}
                 }
             };
