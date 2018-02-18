@@ -49,9 +49,9 @@ namespace UnitTests {
             </fields>
             <calculated-fields>
                 <add name='added' type='double' t='jint(number1+number2)' />
-                <add name='joined' t='js(text1+text2)' />
-                <add name='if' t='js(text1===""Two"" || text2===""Two"" || number1===2 || number2===2.0 ? ""It is Two"" : ""It is not Two"")' />
-                <add name='is2' t='javascript(number1==2)' type='bool' />
+                <add name='joined' t='jint(text1+text2)' />
+                <add name='if' t='jint(text1===""Two"" || text2===""Two"" || number1===2 || number2===2.0 ? ""It is Two"" : ""It is not Two"")' />
+                <add name='is2' t='jint(number1==2)' type='bool' />
             </calculated-fields>
         </add>
     </entities>
