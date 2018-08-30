@@ -34,14 +34,24 @@ namespace Transformalize.Transforms.Jint {
         private readonly Dictionary<int, string> _errors = new Dictionary<int, string>();
         private readonly ParserOptions _parserOptions = new ParserOptions { Tolerant = true };
 
-        public JintTransform(IReader reader = null, IContext context = null) : base(context, "object") {
+        public JintTransform(IReader reader = null, IContext context = null) : base(context, null) {
 
             if (IsMissingContext()) {
                 return;
             }
 
+            Returns = Context.Field.Type;
+
             if (IsMissing(Context.Operation.Script)) {
                 return;
+            }
+
+            // to support shorthand script (e.g. t="js(scriptName)")
+            if (Context.Operation.Scripts.Count == 0) {
+                var script = Context.Process.Scripts.FirstOrDefault(s => s.Name == Context.Operation.Script);
+                if (script != null) {
+                    Context.Operation.Script = ReadScript(Context, reader, script);
+                }
             }
 
             // automatic parameter binding
@@ -55,6 +65,7 @@ namespace Transformalize.Transforms.Jint {
                     .Intersect(Context.GetAllEntityFields().Select(f => f.Alias))
                     .Distinct()
                     .ToArray();
+
                 if (parameters.Any()) {
                     foreach (var parameter in parameters) {
                         Context.Operation.Parameters.Add(new Parameter { Field = parameter });
@@ -65,11 +76,11 @@ namespace Transformalize.Transforms.Jint {
             // for js, always add the input parameter
             _input = MultipleInput().Union(new[] { Context.Field }).Distinct().ToArray();
 
-            if(Context.Process.Scripts.Any(s=>s.Global))
-
-            // load any global scripts
-            foreach (var sc in Context.Process.Scripts.Where(s => s.Global)) {
-                ProcessScript(context, reader, Context.Process.Scripts.First(s => s.Name == sc.Name));
+            if (Context.Process.Scripts.Any(s => s.Global)) {
+                // load any global scripts
+                foreach (var sc in Context.Process.Scripts.Where(s => s.Global)) {
+                    ProcessScript(context, reader, Context.Process.Scripts.First(s => s.Name == sc.Name));
+                }
             }
 
             // load any specified scripts
@@ -160,10 +171,11 @@ namespace Transformalize.Transforms.Jint {
         }
 
         public override IEnumerable<OperationSignature> GetSignatures() {
-            return new[] {
-                new OperationSignature("jint") {
-                    Parameters = new List<OperationParameter> {new OperationParameter("script")}
-                }
+            yield return new OperationSignature("jint") {
+                Parameters = new List<OperationParameter> { new OperationParameter("script") }
+            };
+            yield return new OperationSignature("js") {
+                Parameters = new List<OperationParameter> { new OperationParameter("script") }
             };
         }
 

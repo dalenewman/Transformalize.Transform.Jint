@@ -1,6 +1,6 @@
 ### Overview
 
-This adds a `jint` (javascript) transform to Transformalize using [Jint](https://github.com/sebastienros/jint).  It is a plug-in compatible with Transformalize 0.3.3-beta.
+This adds a `jint` (javascript) transform to Transformalize using [Jint](https://github.com/sebastienros/jint).  It is a plug-in compatible with Transformalize 0.3.5-beta.
 
 Build the Autofac project and put it's output into Transformalize's *plugins* folder.
 
@@ -31,20 +31,20 @@ This produces `SomethingWonderful 2`
 
 ``` ini
 
-BenchmarkDotNet=v0.10.12, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.125)
+BenchmarkDotNet=v0.10.12, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.251)
 Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical cores and 4 physical cores
-Frequency=2742187 Hz, Resolution=364.6724 ns, Timer=TSC
-  [Host]       : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.2600.0
-  LegacyJitX64 : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 64bit LegacyJIT/clrjit-v4.7.2600.0;compatjit-v4.7.2600.0
-  LegacyJitX86 : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.2600.0
+Frequency=2742192 Hz, Resolution=364.6718 ns, Timer=TSC
+  [Host]       : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.2633.0  [AttachedDebugger]
+  LegacyJitX64 : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 64bit LegacyJIT/clrjit-v4.7.2633.0;compatjit-v4.7.2633.0
+  LegacyJitX86 : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.2633.0
 
 Jit=LegacyJit  Runtime=Clr  
 
 ```
 |                       Method |          Job | Platform |     Mean |     Error |    StdDev | Scaled | ScaledSD |
 |----------------------------- |------------- |--------- |---------:|----------:|----------:|-------:|---------:|
-|              &#39;500 test rows&#39; | LegacyJitX64 |      X64 | 71.56 ms | 1.4203 ms | 1.5786 ms |   1.00 |     0.00 |
-| &#39;500 rows with 3 transforms&#39; | LegacyJitX64 |      X64 | 90.41 ms | 0.6649 ms | 0.5894 ms |   1.26 |     0.03 |
+|              &#39;500 test rows&#39; | LegacyJitX64 |      X64 | 53.88 ms | 0.8055 ms | 0.7535 ms |   1.00 |     0.00 |
+| &#39;500 rows with 3 transforms&#39; | LegacyJitX64 |      X64 | 76.89 ms | 1.6512 ms | 1.3788 ms |   1.43 |     0.03 |
 |                              |              |          |          |           |           |        |          |
-|              &#39;500 test rows&#39; | LegacyJitX86 |      X86 | 76.07 ms | 1.2432 ms | 1.1629 ms |   1.00 |     0.00 |
-| &#39;500 rows with 3 transforms&#39; | LegacyJitX86 |      X86 | 93.41 ms | 0.5980 ms | 0.5594 ms |   1.23 |     0.02 |
+|              &#39;500 test rows&#39; | LegacyJitX86 |      X86 | 59.45 ms | 1.1400 ms | 1.3571 ms |   1.00 |     0.00 |
+| &#39;500 rows with 3 transforms&#39; | LegacyJitX86 |      X86 | 80.10 ms | 1.7117 ms | 1.9712 ms |   1.35 |     0.04 |
