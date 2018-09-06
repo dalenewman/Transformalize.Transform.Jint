@@ -24,6 +24,7 @@ namespace Transformalize.Transforms.Jint.Autofac {
 
             RegisterShortHand(signatures);
             RegisterTransform(builder, c => new JintTransform(new DefaultReader(new FileReader(), new WebReader()), c), signatures);
+            RegisterValidator(builder, c=> new JintValidator(new DefaultReader(new FileReader(), new WebReader()), c), signatures);
         }
 
 
@@ -58,5 +59,10 @@ namespace Transformalize.Transforms.Jint.Autofac {
             }
         }
 
+        private static void RegisterValidator(ContainerBuilder builder, Func<IContext, IValidate> getValidator, IEnumerable<OperationSignature> signatures) {
+            foreach (var s in signatures) {
+                builder.Register((c, p) => getValidator(p.Positional<IContext>(0))).Named<IValidate>(s.Method);
+            }
+        }
     }
 }
