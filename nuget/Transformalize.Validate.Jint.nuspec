@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Transformalize.Validate.Jint</id>
+    <version>0.3.6-beta</version>
+    <title>Transformalize Transform using Jint</title>
+    <authors>Dale Newman</authors>
+    <owners>Dale Newman</owners>
+    <licenseUrl>https://github.com/dalenewman/Transformalize.Transform.Jint/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Transformalize Validator using Jint</description>
+    <releaseNotes>add jint validator</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>etl</tags>
+    <dependencies>
+      <group targetFramework="net452">
+        <dependency id="Transformalize" version="0.3.6-beta" />
+        <dependency id="Jint" version="2.11.58" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\Transformalize.Validate.Jint\bin\Release\Transformalize.Validate.Jint.dll" target="lib\net452\Transformalize.Validate.Jint.dll" />
+  </files>
+</package>

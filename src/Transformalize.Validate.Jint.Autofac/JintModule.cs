@@ -5,9 +5,10 @@ using Autofac;
 using Cfg.Net.Reader;
 using Cfg.Net.Shorthand;
 using Transformalize.Contracts;
+using Transformalize.Validators.Jint;
 using Parameter = Cfg.Net.Shorthand.Parameter;
 
-namespace Transformalize.Transforms.Jint.Autofac {
+namespace Transformalize.Validate.Jint.Autofac {
     public class JintModule : Module {
 
         private HashSet<string> _methods;
@@ -15,14 +16,14 @@ namespace Transformalize.Transforms.Jint.Autofac {
 
         protected override void Load(ContainerBuilder builder) {
 
-            var signatures = new JintTransform().GetSignatures().ToArray();
+            var signatures = new JintValidator().GetSignatures().ToArray();
 
             // get methods and shorthand from builder
             _methods = builder.Properties.ContainsKey("Methods") ? (HashSet<string>)builder.Properties["Methods"] : new HashSet<string>();
             _shortHand = builder.Properties.ContainsKey("ShortHand") ? (ShorthandRoot)builder.Properties["ShortHand"] : new ShorthandRoot();
 
             RegisterShortHand(signatures);
-            RegisterTransform(builder, c => new JintTransform(new DefaultReader(new FileReader(), new WebReader()), c), signatures);
+            RegisterValidator(builder, c=> new JintValidator(new DefaultReader(new FileReader(), new WebReader()), c), signatures);
         }
 
 
@@ -51,12 +52,10 @@ namespace Transformalize.Transforms.Jint.Autofac {
             }
         }
 
-        private static void RegisterTransform(ContainerBuilder builder, Func<IContext, ITransform> getTransform, IEnumerable<OperationSignature> signatures) {
+        private static void RegisterValidator(ContainerBuilder builder, Func<IContext, IValidate> getValidator, IEnumerable<OperationSignature> signatures) {
             foreach (var s in signatures) {
-                builder.Register((c, p) => getTransform(p.Positional<IContext>(0))).Named<ITransform>(s.Method);
+                builder.Register((c, p) => getValidator(p.Positional<IContext>(0))).Named<IValidate>(s.Method);
             }
         }
-
-
     }
 }

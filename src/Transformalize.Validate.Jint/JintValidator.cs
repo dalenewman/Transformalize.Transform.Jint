@@ -15,6 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 #endregion
+
 using System.Collections.Generic;
 using System.Linq;
 using Cfg.Net.Contracts;
@@ -23,10 +24,12 @@ using Jint.Parser;
 using Transformalize.Configuration;
 using Transformalize.Contracts;
 using Transformalize.Extensions;
-using Transformalize.Validators;
 
-namespace Transformalize.Transforms.Jint {
+namespace Transformalize.Validators.Jint {
 
+    /// <summary>
+    /// Must return a true or false.  May set the message field.
+    /// </summary>
     public class JintValidator : BaseValidate {
 
         private readonly Field[] _input;
@@ -79,7 +82,7 @@ namespace Transformalize.Transforms.Jint {
             var input = MultipleInput().Union(new[] { Context.Field }).Distinct().ToList();
 
             //add the message field so it can be modified
-            if (!input.Any(f => f.Alias == MessageField.Alias)) {
+            if (input.All(f => f.Alias != MessageField.Alias)) {
                 input.Add(Context.Entity.GetAllFields().First(f => f.Alias == MessageField.Alias));
             }
             _input = input.ToArray();
