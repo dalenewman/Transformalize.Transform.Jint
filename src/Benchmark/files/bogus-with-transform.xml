@@ -15,9 +15,7 @@
       </fields>
 
       <calculated-fields>
-        <add name='Score' type='int' t='jint(Stars * Reviewers)' />
-        <add name='FullName' t='js(FirstName + " " + LastName)' />
-        <add name='Condition' t='javascript(Stars===5 ? "5 Star" : "")' />
+        <add name='Condition' t='jint(Stars===5 ? "5 Star" : "")' />
       </calculated-fields>
     </add>
   </entities>

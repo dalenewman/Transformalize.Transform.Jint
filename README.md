@@ -31,20 +31,17 @@ This produces `SomethingWonderful 2`
 
 ``` ini
 
-BenchmarkDotNet=v0.10.12, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.251)
-Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical cores and 4 physical cores
-Frequency=2742192 Hz, Resolution=364.6718 ns, Timer=TSC
-  [Host]       : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.2633.0  [AttachedDebugger]
-  LegacyJitX64 : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 64bit LegacyJIT/clrjit-v4.7.2633.0;compatjit-v4.7.2633.0
-  LegacyJitX86 : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.2633.0
+BenchmarkDotNet=v0.11.1, OS=Windows 10.0.16299.251 (1709/FallCreatorsUpdate/Redstone3)
+Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+Frequency=2742188 Hz, Resolution=364.6723 ns, Timer=TSC
+  [Host]       : .NET Framework 4.7.1 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.2633.0
+  LegacyJitX64 : .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit LegacyJIT/clrjit-v4.7.2633.0;compatjit-v4.7.2633.0
 
-Jit=LegacyJit  Runtime=Clr  
+Job=LegacyJitX64  Jit=LegacyJit  Platform=X64  
+Runtime=Clr  
 
 ```
-|                       Method |          Job | Platform |     Mean |     Error |    StdDev | Scaled | ScaledSD |
-|----------------------------- |------------- |--------- |---------:|----------:|----------:|-------:|---------:|
-|              &#39;500 test rows&#39; | LegacyJitX64 |      X64 | 53.88 ms | 0.8055 ms | 0.7535 ms |   1.00 |     0.00 |
-| &#39;500 rows with 3 transforms&#39; | LegacyJitX64 |      X64 | 76.89 ms | 1.6512 ms | 1.3788 ms |   1.43 |     0.03 |
-|                              |              |          |          |           |           |        |          |
-|              &#39;500 test rows&#39; | LegacyJitX86 |      X86 | 59.45 ms | 1.1400 ms | 1.3571 ms |   1.00 |     0.00 |
-| &#39;500 rows with 3 transforms&#39; | LegacyJitX86 |      X86 | 80.10 ms | 1.7117 ms | 1.9712 ms |   1.35 |     0.04 |
+|             Method |     Mean |    Error |   StdDev | Scaled | ScaledSD |
+|------------------- |---------:|---------:|---------:|-------:|---------:|
+|        &#39;5000 rows&#39; | 445.7 ms | 4.662 ms | 4.133 ms |   1.00 |     0.00 |
+| &#39;5000 rows 1 jint&#39; | 514.0 ms | 5.962 ms | 5.576 ms |   1.15 |     0.02 |

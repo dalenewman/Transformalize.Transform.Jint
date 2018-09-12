@@ -5,7 +5,6 @@ VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4563C88-9C80-4BD0-949E-AA64F111957E}"
 	ProjectSection(SolutionItems) = preProject
-		src\Benchmark\bin\Release\BenchmarkDotNet.Artifacts\results\Benchmark.Benchmarks-report-github.md = src\Benchmark\bin\Release\BenchmarkDotNet.Artifacts\results\Benchmark.Benchmarks-report-github.md
 		README.md = README.md
 	EndProjectSection
 EndProject
