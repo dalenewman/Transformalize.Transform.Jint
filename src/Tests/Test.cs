@@ -25,7 +25,7 @@ using Transformalize.Contracts;
 using Transformalize.Providers.Console;
 using Transformalize.Transforms.Jint.Autofac;
 
-namespace UnitTests {
+namespace Tests {
 
     [TestClass]
     public class Test {

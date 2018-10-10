@@ -7,7 +7,7 @@
     <ProjectGuid>{EC07CAB6-7479-41FE-AFA2-1DA4EAB754AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Transformalize.Validate.Jint.Autofac</RootNamespace>
+    <RootNamespace>Transformalize.Validators.Jint.Autofac</RootNamespace>
     <AssemblyName>Transformalize.Validate.Jint.Autofac</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

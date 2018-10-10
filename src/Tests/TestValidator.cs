@@ -16,23 +16,22 @@
 // limitations under the License.
 #endregion
 
-using System.Linq;
 using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 using Transformalize.Configuration;
 using Transformalize.Containers.Autofac;
 using Transformalize.Contracts;
 using Transformalize.Providers.Console;
-using Transformalize.Transforms.Jint.Autofac;
+using Transformalize.Validate.Jint.Autofac;
 
-namespace UnitTests {
+namespace Tests {
 
     [TestClass]
     public class TestValidator {
 
         [TestMethod]
-        public void BasicTests()
-        {
+        public void BasicTests() {
             const string xml = @"
 <add name='TestProcess' read-only='false'>
     <entities>
@@ -42,8 +41,8 @@ namespace UnitTests {
                 <add number1='2' number2='2.0' />
             </rows>
             <fields>
-                <add name='number1' type='int' primary-key='true' v='js(number1 > 1)' help='javascript validation failed' />
-                <add name='number2' type='double' v='js(if(number2 > 1.0){ true; } else { number2Message = ""special message""; false; })' />
+                <add name='number1' type='int' primary-key='true' v='jint(number1 > 1)' help='javascript validation failed' />
+                <add name='number2' type='double' v='jint(if(number2 > 1.0){ true; } else { number2Message = ""special message""; false; })' />
             </fields>
         </add>
     </entities>
@@ -53,7 +52,7 @@ namespace UnitTests {
                 using (var inner = new TestContainer(new JintModule()).CreateScope(outer, new ConsoleLogger(LogLevel.Debug))) {
 
                     var process = inner.Resolve<Process>();
-                  
+
                     var controller = inner.Resolve<IProcessController>();
                     controller.Execute();
                     var rows = process.Entities.First().Rows;
