@@ -77,6 +77,7 @@
 
 if exist %25f%25 copy /Y "$(TargetDir)Jint.dll" "%25f%25"
 if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Jint.dll" "%25f%25"
-if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Jint.Autofac.dll" "%25f%25"</PostBuildEvent>
+if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Jint.Autofac.dll" "%25f%25"
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -73,8 +73,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>set f="$(SolutionDir)..\Transformalize\Pipeline.Command\bin\$(ConfigurationName)\plugins"
+    <PostBuildEvent>set f="$(SolutionDir)..\Transformalize\Pipeline.Command\plugins"
 
-if exist %25f%25 copy /Y "$(TargetDir)*.*" "%25f%25"</PostBuildEvent>
+if exist %25f%25 copy /Y "$(TargetDir)Jint.dll" "%25f%25"
+if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Validate.Jint.dll" "%25f%25"
+if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Validate.Jint.Autofac.dll" "%25f%25"
+</PostBuildEvent>
   </PropertyGroup>
 </Project>
