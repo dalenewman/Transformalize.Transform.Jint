@@ -69,8 +69,6 @@ namespace Tests {
                     Assert.AreEqual(true, rows[1]["number2Valid"]);
                     Assert.AreEqual("", rows[1]["number2Message"]);
 
-
-
                 }
             }
         }
