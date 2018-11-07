@@ -13,9 +13,11 @@
         <add name='Stars' type='byte' min='1' max='5' />
         <add name='Reviewers' type='int' min='0' max='500' />
       </fields>
+
       <calculated-fields>
         <add name='Now' type='datetime' t='now(1)' />
         <add name='Tomorrow' type='datetime' t='now(1).dateAdd(days,3)' />
+        <add name='Test' t='jint(Now > Tomorrow ? Now : Tomorrow)' />
       </calculated-fields>
     </add>
   </entities>

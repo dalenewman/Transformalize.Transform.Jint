@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Transformalize.Transform.Jint</id>
-    <version>0.3.6-beta</version>
+    <version>0.3.12-beta</version>
     <title>Transformalize Transform using Jint</title>
     <authors>Dale Newman</authors>
     <owners>Dale Newman</owners>
@@ -10,17 +10,17 @@
     <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Transformalize Transform using Jint</description>
-    <releaseNotes>add jint validator</releaseNotes>
+    <releaseNotes>target 462 and update dependencies</releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags>etl</tags>
     <dependencies>
-      <group targetFramework="net452">
-        <dependency id="Transformalize" version="0.3.6-beta" />
+      <group targetFramework="net462">
+        <dependency id="Transformalize" version="0.3.12-beta" />
         <dependency id="Jint" version="2.11.58" />
       </group>
     </dependencies>
   </metadata>
   <files>
-    <file src="..\src\Transformalize.Transform.Jint\bin\Release\Transformalize.Transform.Jint.dll" target="lib\net452\Transformalize.Transform.Jint.dll" />
+    <file src="..\src\Transformalize.Transform.Jint\bin\Release\Transformalize.Transform.Jint.dll" target="lib\net462\Transformalize.Transform.Jint.dll" />
   </files>
 </package>

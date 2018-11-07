@@ -24,7 +24,7 @@ namespace Benchmark {
         }
 
         [Benchmark(Baseline = false, Description = "5000 rows 1 jint")]
-        public void CSharpRows() {
+        public void JintRows() {
             using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(@"files\bogus-with-transform.xml?Size=5000")) {
                 using (var inner = new TestContainer(new JintModule(), new BogusModule()).CreateScope(outer, new NullLogger())) {
                     var controller = inner.Resolve<IProcessController>();
@@ -33,6 +33,15 @@ namespace Benchmark {
             }
         }
 
+        [Benchmark(Baseline = false, Description = "5000 rows 1 jint with dates")]
+        public void JintDateRows() {
+            using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(@"files\bogus-with-transform-dates.xml?Size=5000")) {
+                using (var inner = new TestContainer(new JintModule(), new BogusModule()).CreateScope(outer, new NullLogger())) {
+                    var controller = inner.Resolve<IProcessController>();
+                    controller.Execute();
+                }
+            }
+        }
     }
 
     public class Program {
