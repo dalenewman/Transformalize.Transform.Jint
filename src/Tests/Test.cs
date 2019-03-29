@@ -16,9 +16,9 @@
 // limitations under the License.
 #endregion
 
-using System.Linq;
 using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 using Transformalize.Configuration;
 using Transformalize.Containers.Autofac;
 using Transformalize.Contracts;
@@ -27,13 +27,15 @@ using Transformalize.Transforms.Jint.Autofac;
 
 namespace Tests {
 
-    [TestClass]
-    public class Test {
+   [TestClass]
+   public class Test {
 
-        [TestMethod]
-        public void BasicTests() {
+      [TestMethod]
+      public void BasicTests() {
 
-            var xml = $@"
+         var logger = new ConsoleLogger(LogLevel.Debug);
+
+         var xml = $@"
 <add name='TestProcess' read-only='false'>
     <entities>
         <add name='TestData'>
@@ -58,36 +60,35 @@ namespace Tests {
     </entities>
 
 </add>";
-            using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(xml)) {
-                using (var inner = new TestContainer(new JintModule()).CreateScope(outer, new ConsoleLogger(LogLevel.Debug))) {
+         using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(xml, logger)) {
+            var process = outer.Resolve<Process>();
+            using (var inner = new TestContainer(new JintModule()).CreateScope(process, logger)) {
 
-                    var process = inner.Resolve<Process>();
-                  
-                    var controller = inner.Resolve<IProcessController>();
-                    controller.Execute();
-                    var rows = process.Entities.First().Rows;
+               var controller = inner.Resolve<IProcessController>();
+               controller.Execute();
+               var rows = process.Entities.First().Rows;
 
-                    Assert.AreEqual(2.0, rows[0]["added"]);
-                    Assert.AreEqual(4.0, rows[1]["added"]);
-                    Assert.AreEqual(6.0, rows[2]["added"]);
+               Assert.AreEqual(2.0, rows[0]["added"]);
+               Assert.AreEqual(4.0, rows[1]["added"]);
+               Assert.AreEqual(6.0, rows[2]["added"]);
 
-                    Assert.AreEqual("OneOne", rows[0]["joined"]);
-                    Assert.AreEqual("TwoTwo", rows[1]["joined"]);
-                    Assert.AreEqual("ThreeThree", rows[2]["joined"]);
+               Assert.AreEqual("OneOne", rows[0]["joined"]);
+               Assert.AreEqual("TwoTwo", rows[1]["joined"]);
+               Assert.AreEqual("ThreeThree", rows[2]["joined"]);
 
-                    Assert.AreEqual("It is not Two", rows[0]["if"]);
-                    Assert.AreEqual("It is Two", rows[1]["if"]);
-                    Assert.AreEqual("It is not Two", rows[2]["if"]);
+               Assert.AreEqual("It is not Two", rows[0]["if"]);
+               Assert.AreEqual("It is Two", rows[1]["if"]);
+               Assert.AreEqual("It is not Two", rows[2]["if"]);
 
-                    Assert.AreEqual(false,rows[0]["is2"]);
-                    Assert.AreEqual(true, rows[1]["is2"]);
-                    Assert.AreEqual(false, rows[2]["is2"]);
-                    
-                }
+               Assert.AreEqual(false, rows[0]["is2"]);
+               Assert.AreEqual(true, rows[1]["is2"]);
+               Assert.AreEqual(false, rows[2]["is2"]);
+
             }
+         }
 
 
 
-        }
-    }
+      }
+   }
 }

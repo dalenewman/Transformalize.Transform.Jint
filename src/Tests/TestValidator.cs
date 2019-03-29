@@ -27,12 +27,15 @@ using Transformalize.Validate.Jint.Autofac;
 
 namespace Tests {
 
-    [TestClass]
-    public class TestValidator {
+   [TestClass]
+   public class TestValidator {
 
-        [TestMethod]
-        public void BasicTests() {
-            const string xml = @"
+      [TestMethod]
+      public void BasicTests() {
+
+         var logger = new ConsoleLogger();
+
+         const string xml = @"
 <add name='TestProcess' read-only='false'>
     <entities>
         <add name='TestData'>
@@ -48,29 +51,28 @@ namespace Tests {
     </entities>
 
 </add>";
-            using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(xml)) {
-                using (var inner = new TestContainer(new JintModule()).CreateScope(outer, new ConsoleLogger(LogLevel.Debug))) {
+         using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(xml, logger)) {
+            var process = outer.Resolve<Process>();
+            using (var inner = new TestContainer(new JintModule()).CreateScope(process, logger)) {
 
-                    var process = inner.Resolve<Process>();
+               var controller = inner.Resolve<IProcessController>();
+               controller.Execute();
+               var rows = process.Entities.First().Rows;
 
-                    var controller = inner.Resolve<IProcessController>();
-                    controller.Execute();
-                    var rows = process.Entities.First().Rows;
+               Assert.AreEqual(false, rows[0]["number1Valid"]);
+               Assert.AreEqual("javascript validation failed|", rows[0]["number1Message"]);
 
-                    Assert.AreEqual(false, rows[0]["number1Valid"]);
-                    Assert.AreEqual("javascript validation failed|", rows[0]["number1Message"]);
+               Assert.AreEqual(true, rows[1]["number1Valid"]);
+               Assert.AreEqual("", rows[1]["number1Message"]);
 
-                    Assert.AreEqual(true, rows[1]["number1Valid"]);
-                    Assert.AreEqual("", rows[1]["number1Message"]);
+               Assert.AreEqual(false, rows[0]["number2Valid"]);
+               Assert.AreEqual("special message|", rows[0]["number2Message"]);
 
-                    Assert.AreEqual(false, rows[0]["number2Valid"]);
-                    Assert.AreEqual("special message|", rows[0]["number2Message"]);
+               Assert.AreEqual(true, rows[1]["number2Valid"]);
+               Assert.AreEqual("", rows[1]["number2Message"]);
 
-                    Assert.AreEqual(true, rows[1]["number2Valid"]);
-                    Assert.AreEqual("", rows[1]["number2Message"]);
-
-                }
             }
-        }
-    }
+         }
+      }
+   }
 }

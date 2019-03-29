@@ -16,7 +16,7 @@
 
       <calculated-fields>
         <add name='Now' type='datetime' t='now(1)' />
-        <add name='Tomorrow' type='datetime' t='now(1).dateAdd(days,3)' />
+        <add name='Tomorrow' type='datetime' t='now(1).dateAdd(3,days)' />
         <add name='Test' t='jint(Now > Tomorrow ? Now : Tomorrow)' />
       </calculated-fields>
     </add>

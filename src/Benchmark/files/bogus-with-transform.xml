@@ -15,8 +15,6 @@
       </fields>
 
       <calculated-fields>
-        <add name='Now' type='datetime' t='now(1)' />
-        <add name='Tomorrow' type='datetime' t='now(1).dateAdd(days,3)' />
         <add name='Condition' t='jint(Stars===5 ? "5 Star" : "")' />
       </calculated-fields>
     </add>

@@ -16,9 +16,9 @@
 // limitations under the License.
 #endregion
 
-using System.Linq;
 using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 using Transformalize.Configuration;
 using Transformalize.Containers.Autofac;
 using Transformalize.Contracts;
@@ -27,13 +27,15 @@ using Transformalize.Transforms.Jint.Autofac;
 
 namespace Tests {
 
-    [TestClass]
-    public class TestShorthandScript {
+   [TestClass]
+   public class TestShorthandScript {
 
-        [TestMethod]
-        public void BasicTests() {
+      [TestMethod]
+      public void BasicTests() {
 
-            var xml = @"
+         var logger = new ConsoleLogger(LogLevel.Debug);
+
+         var xml = @"
 <add name='Test' read-only='true'>
     <scripts>
         <add name='s1' file='scripts\script.js' />
@@ -56,24 +58,24 @@ namespace Tests {
     </entities>
 
 </add>";
-            using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(xml)) {
-                using (var inner = new TestContainer(new JintModule()).CreateScope(outer, new ConsoleLogger(LogLevel.Debug))) {
+         using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(xml, logger)) {
+            var process = outer.Resolve<Process>();
+            using (var inner = new TestContainer(new JintModule()).CreateScope(process, new ConsoleLogger(LogLevel.Debug))) {
 
-                    var process = inner.Resolve<Process>();
-                    var controller = inner.Resolve<IProcessController>();
-                    controller.Execute();
-                    var rows = process.Entities.First().Rows;
+               var controller = inner.Resolve<IProcessController>();
+               controller.Execute();
+               var rows = process.Entities.First().Rows;
 
-                    Assert.AreEqual(-1.0, rows[0]["scripted"]);
-                    Assert.AreEqual(4.0, rows[1]["scripted"]);
-                    Assert.AreEqual(9.0, rows[2]["scripted"]);
+               Assert.AreEqual(-1.0, rows[0]["scripted"]);
+               Assert.AreEqual(4.0, rows[1]["scripted"]);
+               Assert.AreEqual(9.0, rows[2]["scripted"]);
 
-                    
-                }
+
             }
+         }
 
 
 
-        }
-    }
+      }
+   }
 }
