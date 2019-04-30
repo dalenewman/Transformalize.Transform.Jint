@@ -53,7 +53,7 @@ namespace Tests {
 </add>";
          using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(xml, logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new TestContainer(new JintModule()).CreateScope(process, logger)) {
+            using (var inner = new Container(new JintModule()).CreateScope(process, logger)) {
 
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();

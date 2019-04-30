@@ -18,11 +18,11 @@
 using Cfg.Net.Contracts;
 using Jint;
 using Jint.Parser;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Transformalize.Configuration;
 using Transformalize.Contracts;
-using Transformalize.Extensions;
 
 namespace Transformalize.Transforms.Jint {
 
@@ -103,11 +103,18 @@ namespace Transformalize.Transforms.Jint {
                return;
             }
 
-            foreach (var e in program.Errors) {
-               Context.Error("{0}, script: {1}...", e.Message, script.Content.Left(30).Replace("{", "{{").Replace("}", "}}"));
+            if (program.Errors.Any()) {
+               foreach (var e in program.Errors) {
+                  Context.Error(e.Message);
+               }
+               Utility.CodeToError(context, script.Content);
+               Run = false;
             }
+
          } catch (ParserException ex) {
-            Context.Error("{0}, script: {1}...", ex.Message, script.Content.Left(30).Replace("{", "{{").Replace("}", "}}"));
+            Context.Error(ex.Message);
+            Utility.CodeToError(context, script.Content);
+            Run = false;
          }
 
       }
@@ -144,30 +151,50 @@ namespace Transformalize.Transforms.Jint {
       }
 
       public override IRow Operate(IRow row) {
-         foreach (var field in _input) {
-            _jint.SetValue(field.Alias, row[field]);
-         }
-         try {
-            var value = Context.Field.Convert(_jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject());
-            if (value == null && !_errors.ContainsKey(0)) {
-               Context.Error($"Jint transform in {Context.Field.Alias} returns null!");
-               _errors[0] = $"Jint transform in {Context.Field.Alias} returns null!";
-            } else {
-               row[Context.Field] = value;
-            }
-         } catch (global::Jint.Runtime.JavaScriptException jse) {
-            if (!_errors.ContainsKey(jse.LineNumber)) {
-               Context.Error("Script: " + Context.Operation.Script.Replace("{", "{{").Replace("}", "}}"));
-               Context.Error(jse, "Error Message: " + jse.Message);
-               Context.Error("Variables:");
-               foreach (var field in _input) {
-                  Context.Error($"{field.Alias}:{row[field]}");
-               }
-               _errors[jse.LineNumber] = jse.Message;
+         throw new NotImplementedException();
+      }
+
+      public override IEnumerable<IRow> Operate(IEnumerable<IRow> rows) {
+
+         if (!Run) {
+            foreach (var row in rows) {
+               yield return row;
             }
          }
 
-         return row;
+         bool tryFirst = true;
+         foreach (var row in rows) {
+            foreach (var field in _input) {
+               _jint.SetValue(field.Alias, row[field]);
+            }
+            if (tryFirst) {
+               try {
+                  tryFirst = false;
+                  var obj = _jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject();
+                  var value = obj == null ? null : Context.Field.Convert(obj);
+                  if (value == null && !_errors.ContainsKey(0)) {
+                     Context.Error($"Jint transform in {Context.Field.Alias} returns null!");
+                     _errors[0] = $"Jint transform in {Context.Field.Alias} returns null!";
+                  } else {
+                     row[Context.Field] = value;
+                  }
+               } catch (global::Jint.Runtime.JavaScriptException jse) {
+                  if (!_errors.ContainsKey(jse.LineNumber)) {
+                     Context.Error("Script: " + Context.Operation.Script.Replace("{", "{{").Replace("}", "}}"));
+                     Context.Error(jse, "Error Message: " + jse.Message);
+                     Context.Error("Variables:");
+                     foreach (var field in _input) {
+                        Context.Error($"{field.Alias}:{row[field]}");
+                     }
+                     _errors[jse.LineNumber] = jse.Message;
+                  }
+               }
+            } else {
+               row[Context.Field] = Context.Field.Convert(_jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject());
+            }
+
+            yield return row;
+         }
       }
 
       public override IEnumerable<OperationSignature> GetSignatures() {

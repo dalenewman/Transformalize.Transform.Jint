@@ -42,8 +42,8 @@
     <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Cfg.Net.Environment, Version=0.3.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Cfg-NET.Environment.0.3.3\lib\portable-net45+win8+wpa81+wp8\Cfg.Net.Environment.dll</HintPath>
+    <Reference Include="Cfg.Net.Environment, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cfg-NET.Environment.0.3.4\lib\portable-net45+win8+wpa81+wp8\Cfg.Net.Environment.dll</HintPath>
     </Reference>
     <Reference Include="Cfg.Net.Reader, Version=0.3.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Cfg-NET.Reader.0.3.3\lib\net45\Cfg.Net.Reader.dll</HintPath>
@@ -76,17 +76,17 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Transformalize, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.0.5.0-beta\lib\net462\Transformalize.dll</HintPath>
+    <Reference Include="Transformalize, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.0.6.1-beta\lib\net462\Transformalize.dll</HintPath>
     </Reference>
-    <Reference Include="Transformalize.Container.Autofac, Version=0.5.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.Container.Autofac.0.5.3-beta\lib\net462\Transformalize.Container.Autofac.dll</HintPath>
+    <Reference Include="Transformalize.Container.Autofac, Version=0.5.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.Container.Autofac.0.6.1-beta\lib\net462\Transformalize.Container.Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Transformalize.Provider.Ado, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.Provider.Ado.0.5.0-beta\lib\net462\Transformalize.Provider.Ado.dll</HintPath>
+    <Reference Include="Transformalize.Provider.Ado, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.Provider.Ado.0.6.1-beta\lib\net462\Transformalize.Provider.Ado.dll</HintPath>
     </Reference>
-    <Reference Include="Transformalize.Provider.Console, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.Provider.Console.0.4.0-beta\lib\net462\Transformalize.Provider.Console.dll</HintPath>
+    <Reference Include="Transformalize.Provider.Console, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.Provider.Console.0.5.0-beta\lib\net462\Transformalize.Provider.Console.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
