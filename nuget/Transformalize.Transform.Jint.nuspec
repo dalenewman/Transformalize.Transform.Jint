@@ -1,26 +1,27 @@
 <?xml version="1.0"?>
 <package>
-  <metadata>
-    <id>Transformalize.Transform.Jint</id>
-    <version>0.6.0-beta</version>
-    <title>Transformalize Transform using Jint</title>
-    <authors>Dale Newman</authors>
-    <owners>Dale Newman</owners>
-    <licenseUrl>https://github.com/dalenewman/Transformalize.Transform.Jint/blob/master/LICENSE.md</licenseUrl>
-    <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Transformalize Transform using Jint</description>
-    <releaseNotes></releaseNotes>
-    <copyright>Copyright 2018-2019</copyright>
-    <tags>etl</tags>
-    <dependencies>
-      <group targetFramework="net462">
-        <dependency id="Transformalize" version="0.6.0-beta" />
-        <dependency id="Jint" version="2.11.58" />
-      </group>
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="..\src\Transformalize.Transform.Jint\bin\Release\Transformalize.Transform.Jint.dll" target="lib\net462\Transformalize.Transform.Jint.dll" />
-  </files>
+   <metadata>
+      <id>Transformalize.Transform.Jint</id>
+      <version>0.6.1-beta</version>
+      <title>Transformalize Transform using Jint</title>
+      <authors>Dale Newman</authors>
+      <owners>Dale Newman</owners>
+      <licenseUrl>https://github.com/dalenewman/Transformalize.Transform.Jint/blob/master/LICENSE.md</licenseUrl>
+      <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <description>Transformalize Transform using Jint</description>
+      <releaseNotes>reduce code duplication</releaseNotes>
+      <copyright>Copyright 2018-2019</copyright>
+      <tags>etl</tags>
+      <dependencies>
+         <group targetFramework="net462">
+            <dependency id="Transformalize" version="0.6.1-beta" />
+            <dependency id="Jint" version="2.11.58" />
+         </group>
+      </dependencies>
+   </metadata>
+   <files>
+      <file src="..\src\Transformalize.Transform.Jint\bin\Release\Transformalize.Transform.Jint.dll" target="lib\net462\Transformalize.Transform.Jint.dll" />
+      <file src="..\src\Transformalize.Jint\bin\Release\Transformalize.Jint.dll" target="lib\net462\Transformalize.Jint.dll" />
+   </files>
 </package>

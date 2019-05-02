@@ -31,7 +31,7 @@ namespace Tests {
    public class TestValidator {
 
       [TestMethod]
-      public void BasicTests() {
+      public void Run() {
 
          var logger = new ConsoleLogger();
 
@@ -51,9 +51,9 @@ namespace Tests {
     </entities>
 
 </add>";
-         using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(xml, logger)) {
+         using (var outer = new ConfigurationContainer(new JintValidateModule()).CreateScope(xml, logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new Container(new JintModule()).CreateScope(process, logger)) {
+            using (var inner = new Container(new JintValidateModule()).CreateScope(process, logger)) {
 
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();

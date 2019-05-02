@@ -8,7 +8,7 @@ using Transformalize.Contracts;
 using Parameter = Cfg.Net.Shorthand.Parameter;
 
 namespace Transformalize.Transforms.Jint.Autofac {
-    public class JintModule : Module {
+    public class JintTransformModule : Module {
 
         private HashSet<string> _methods;
         private ShorthandRoot _shortHand;

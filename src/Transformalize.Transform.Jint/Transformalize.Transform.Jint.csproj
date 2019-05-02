@@ -55,5 +55,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Transformalize.Jint\Transformalize.Jint.csproj">
+      <Project>{0b845760-1b3d-4656-b356-e89b099cdd83}</Project>
+      <Name>Transformalize.Jint</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

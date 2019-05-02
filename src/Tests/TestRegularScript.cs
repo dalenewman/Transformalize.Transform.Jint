@@ -28,33 +28,39 @@ using Transformalize.Transforms.Jint.Autofac;
 namespace Tests {
 
    [TestClass]
-   public class Test {
+   public class TestRegularScript {
 
       [TestMethod]
-      public void BasicTests() {
+      public void Run() {
 
          var logger = new ConsoleLogger(LogLevel.Debug);
 
-         var xml = $@"
-<add name='TestProcess' read-only='false'>
+         var xml = @"
+<add name='Test' read-only='true'>
+    <scripts>
+        <add name='s1' file='scripts\function.js' />
+    </scripts>
     <entities>
-        <add name='TestData'>
+        <add name='Data'>
             <rows>
-                <add number1='1' number2='1.0' text1='One' text2='One' />
-                <add number1='2' number2='2.0' text1='Two' text2='Two' />
-                <add number1='3' number2='3.0' text1='Three' text2='Three' />
+                <add number1='1' number2='1.0' />
+                <add number1='2' number2='2.0' />
+                <add number1='3' number2='3.0' />
             </rows>
             <fields>
                 <add name='number1' type='int' primary-key='true' />
                 <add name='number2' type='double' />
-                <add name='text1' />
-                <add name='text2' />
             </fields>
             <calculated-fields>
-                <add name='added' type='double' t='jint(number1+number2)' />
-                <add name='joined' t='jint(text1+text2)' />
-                <add name='if' t='jint(text1===""Two"" || text2===""Two"" || number1===2 || number2===2.0 ? ""It is Two"" : ""It is not Two"")' />
-                <add name='is2' t='jint(number1==2)' type='bool' />
+                <add name='scripted' type='double'>
+                  <transforms>
+                     <add method='jint' script='run(number1,number2)'>
+                        <scripts>
+                           <add name='s1' />
+                        </scripts>
+                     </add>
+                  </transforms>
+                </add>
             </calculated-fields>
         </add>
     </entities>
@@ -62,27 +68,16 @@ namespace Tests {
 </add>";
          using (var outer = new ConfigurationContainer(new JintTransformModule()).CreateScope(xml, logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new Container(new JintTransformModule()).CreateScope(process, logger)) {
+            using (var inner = new Container(new JintTransformModule()).CreateScope(process, new ConsoleLogger(LogLevel.Debug))) {
 
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
                var rows = process.Entities.First().Rows;
 
-               Assert.AreEqual(2.0, rows[0]["added"]);
-               Assert.AreEqual(4.0, rows[1]["added"]);
-               Assert.AreEqual(6.0, rows[2]["added"]);
+               Assert.AreEqual(-1.0, rows[0]["scripted"]);
+               Assert.AreEqual(4.0, rows[1]["scripted"]);
+               Assert.AreEqual(9.0, rows[2]["scripted"]);
 
-               Assert.AreEqual("OneOne", rows[0]["joined"]);
-               Assert.AreEqual("TwoTwo", rows[1]["joined"]);
-               Assert.AreEqual("ThreeThree", rows[2]["joined"]);
-
-               Assert.AreEqual("It is not Two", rows[0]["if"]);
-               Assert.AreEqual("It is Two", rows[1]["if"]);
-               Assert.AreEqual("It is not Two", rows[2]["if"]);
-
-               Assert.AreEqual(false, rows[0]["is2"]);
-               Assert.AreEqual(true, rows[1]["is2"]);
-               Assert.AreEqual(false, rows[2]["is2"]);
 
             }
          }

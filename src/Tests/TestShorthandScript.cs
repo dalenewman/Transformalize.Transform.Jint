@@ -31,7 +31,7 @@ namespace Tests {
    public class TestShorthandScript {
 
       [TestMethod]
-      public void BasicTests() {
+      public void Run() {
 
          var logger = new ConsoleLogger(LogLevel.Debug);
 
@@ -58,9 +58,9 @@ namespace Tests {
     </entities>
 
 </add>";
-         using (var outer = new ConfigurationContainer(new JintModule()).CreateScope(xml, logger)) {
+         using (var outer = new ConfigurationContainer(new JintTransformModule()).CreateScope(xml, logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new Container(new JintModule()).CreateScope(process, new ConsoleLogger(LogLevel.Debug))) {
+            using (var inner = new Container(new JintTransformModule()).CreateScope(process, new ConsoleLogger(LogLevel.Debug))) {
 
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
@@ -69,13 +69,8 @@ namespace Tests {
                Assert.AreEqual(-1.0, rows[0]["scripted"]);
                Assert.AreEqual(4.0, rows[1]["scripted"]);
                Assert.AreEqual(9.0, rows[2]["scripted"]);
-
-
             }
          }
-
-
-
       }
    }
 }

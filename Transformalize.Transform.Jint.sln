@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4563C88-9C80-4BD0-949E-AA64F111957E}"
 	ProjectSection(SolutionItems) = preProject
@@ -28,6 +28,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Validate.Jint.Autofac", "src\Transformalize.Validate.Jint.Autofac\Transformalize.Validate.Jint.Autofac.csproj", "{EC07CAB6-7479-41FE-AFA2-1DA4EAB754AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "src\Tests\Tests.csproj", "{C0EED1EA-1039-44C9-985F-A58DB381843B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Jint", "src\Transformalize.Jint\Transformalize.Jint.csproj", "{0B845760-1B3D-4656-B356-E89B099CDD83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{C0EED1EA-1039-44C9-985F-A58DB381843B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0EED1EA-1039-44C9-985F-A58DB381843B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0EED1EA-1039-44C9-985F-A58DB381843B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B845760-1B3D-4656-B356-E89B099CDD83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B845760-1B3D-4656-B356-E89B099CDD83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B845760-1B3D-4656-B356-E89B099CDD83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B845760-1B3D-4656-B356-E89B099CDD83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

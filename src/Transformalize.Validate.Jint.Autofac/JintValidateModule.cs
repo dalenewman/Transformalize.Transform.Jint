@@ -9,7 +9,7 @@ using Transformalize.Validators.Jint;
 using Parameter = Cfg.Net.Shorthand.Parameter;
 
 namespace Transformalize.Validate.Jint.Autofac {
-    public class JintModule : Module {
+    public class JintValidateModule : Module {
 
         private HashSet<string> _methods;
         private ShorthandRoot _shortHand;

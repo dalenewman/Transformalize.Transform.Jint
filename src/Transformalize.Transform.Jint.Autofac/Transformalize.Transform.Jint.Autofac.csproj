@@ -60,7 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JintModule.cs" />
+    <Compile Include="JintTransformModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +77,8 @@
     <PostBuildEvent>set f="$(SolutionDir)..\Transformalize\Pipeline.Command\plugins"
 
 if exist %25f%25 copy /Y "$(TargetDir)Jint.dll" "%25f%25"
+if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Jint.dll" "%25f%25"
+if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Jint.pdb" "%25f%25"
 if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Jint.dll" "%25f%25"
 if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Jint.pdb" "%25f%25"
 if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Jint.Autofac.dll" "%25f%25"
