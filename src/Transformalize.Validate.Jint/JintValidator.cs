@@ -16,6 +16,7 @@
 // limitations under the License.
 #endregion
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cfg.Net.Contracts;
@@ -23,7 +24,6 @@ using Jint;
 using Jint.Parser;
 using Transformalize.Configuration;
 using Transformalize.Contracts;
-using Transformalize.Extensions;
 using Transformalize.Jint;
 
 namespace Transformalize.Validators.Jint {
@@ -82,9 +82,9 @@ namespace Transformalize.Validators.Jint {
 
          var tester = new ScriptTester(context);
 
-         if (Context.Process.Scripts.Any(s => s.Global)) {
+         if (Context.Process.Scripts.Any(s => s.Global && (s.Language == "js" || s.Language == Constants.DefaultSetting && s.File.EndsWith(".js", StringComparison.OrdinalIgnoreCase)))) {
             // load any global scripts
-            foreach (var sc in Context.Process.Scripts.Where(s => s.Global)) {
+            foreach (var sc in Context.Process.Scripts.Where(s => s.Global && (s.Language == "js" || s.Language == Constants.DefaultSetting && s.File.EndsWith(".js", StringComparison.OrdinalIgnoreCase)))) {
                var content = scriptReader.Read(Context.Process.Scripts.First(s => s.Name == sc.Name));
                if (tester.Passes(content)) {
                   _jint.Execute(content);
