@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cfg.Net.Contracts;
 using Jint;
+using Jint.Native;
 using Jint.Parser;
 using Transformalize.Configuration;
 using Transformalize.Contracts;
@@ -108,6 +109,17 @@ namespace Transformalize.Validators.Jint {
             }
          }
 
+         // add maps (as objects)
+         foreach (var map in Context.Process.Maps) {
+            if (Context.Operation.Script.Contains(map.Name)) {
+               var obj = _jint.Object.Construct(new JsValue[0]);
+               foreach(var item in map.Items) {
+                  obj.FastAddProperty(item.From.ToString(), new JsValue(item.To.ToString()), false, true, false);
+               }
+               _jint.SetValue(map.Name, obj);
+            }
+         }
+
          Context.Debug(() => $"Script in {Context.Field.Alias} : {Context.Operation.Script.Replace("{", "{{").Replace("}", "}}")}");
       }
 
@@ -116,7 +128,7 @@ namespace Transformalize.Validators.Jint {
             _jint.SetValue(field.Alias, row[field]);
          }
          try {
-            var value = Context.Field.Convert(_jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject());
+            var value = _jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject();
             if (value == null && !_errors.ContainsKey(0)) {
                Context.Error($"Jint transform in {Context.Field.Alias} returns null!");
                _errors[0] = $"Jint transform in {Context.Field.Alias} returns null!";
@@ -145,6 +157,24 @@ namespace Transformalize.Validators.Jint {
                         AppendMessage(row, _hasHelp ? Context.Field.Help : _jint.GetValue(MessageField.Alias).ToString());
                         AppendResult(row, false);
                      }
+                     break;
+                  case string resultString:
+                     if (string.IsNullOrEmpty(resultString)) {
+                        AppendMessage(row, _hasHelp ? Context.Field.Help : _jint.GetValue(MessageField.Alias).ToString());
+                        AppendResult(row, false);
+                     } else {
+                        var lower = resultString.ToLower();
+                        if(lower == "false" || lower == "0") {
+                           AppendMessage(row, _hasHelp ? Context.Field.Help : _jint.GetValue(MessageField.Alias).ToString());
+                           AppendResult(row, false);
+                        } else {
+                           AppendResult(row, true);
+                        }
+                     }
+                     break;
+                  default:
+                     AppendMessage(row, _hasHelp ? Context.Field.Help : _jint.GetValue(MessageField.Alias).ToString());
+                     AppendResult(row, false);
                      break;
                }
 
