@@ -15,7 +15,7 @@ namespace Transformalize.Transforms.Jint.Autofac {
 
         protected override void Load(ContainerBuilder builder) {
 
-            var signatures = new JintTransform().GetSignatures().ToArray();
+            var signatures = new Transformalize.Transforms.Jint. JintTransform().GetSignatures().ToArray();
 
             // get methods and shorthand from builder
             _methods = builder.Properties.ContainsKey("Methods") ? (HashSet<string>)builder.Properties["Methods"] : new HashSet<string>();

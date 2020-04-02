@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Transformalize.Transforms.Jint.Autofac</RootNamespace>
+    <AssemblyName>Transformalize.Transform.Jint.Autofac</AssemblyName>
+    <Version>0.6.28</Version>
+  </PropertyGroup>
+
+  <Import Project="..\Transformalize.Transform.Jint.Autofac.Shared\Transformalize.Transform.Jint.Autofac.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="Transformalize" Version="0.6.28-beta" />
+    <PackageReference Include="Transformalize.Container.Autofac" Version="0.6.28-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Transformalize.Transform.Jint.Standard.20\Transformalize.Transform.Jint.Standard.20.csproj" />
+  </ItemGroup>
+
+</Project>

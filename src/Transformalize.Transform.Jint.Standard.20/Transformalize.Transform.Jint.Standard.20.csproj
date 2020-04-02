@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Transformalize.Transforms.Jint</RootNamespace>
+    <AssemblyName>Transformalize.Transform.Jint</AssemblyName>
+    <Version>0.6.28</Version>
+  </PropertyGroup>
+
+  <Import Project="..\Transformalize.Transform.Jint.Shared\Transformalize.Transform.Jint.Shared.projitems" Label="Shared" />
+
+  <Import Project="..\Transformalize.Jint.Shared\Transformalize.Jint.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="Jint" Version="2.11.58" />
+    <PackageReference Include="Transformalize" Version="0.6.28-beta" />
+  </ItemGroup>
+
+</Project>

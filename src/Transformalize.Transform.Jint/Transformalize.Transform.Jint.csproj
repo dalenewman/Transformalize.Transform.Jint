@@ -47,22 +47,17 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Transformalize, Version=0.6.24.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.0.6.24-beta\lib\net462\Transformalize.dll</HintPath>
+    <Reference Include="Transformalize, Version=0.6.28.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.0.6.28-beta\lib\net462\Transformalize.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JintTransform.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Transformalize.Jint\Transformalize.Jint.csproj">
-      <Project>{0b845760-1b3d-4656-b356-e89b099cdd83}</Project>
-      <Name>Transformalize.Jint</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <Import Project="..\Transformalize.Transform.Jint.Shared\Transformalize.Transform.Jint.Shared.projitems" Label="Shared" />
+  <Import Project="..\Transformalize.Jint.Shared\Transformalize.Jint.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
