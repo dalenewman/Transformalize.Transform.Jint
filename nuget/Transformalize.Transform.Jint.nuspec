@@ -2,7 +2,7 @@
 <package>
    <metadata>
       <id>Transformalize.Transform.Jint</id>
-      <version>0.6.29-beta</version>
+      <version>0.6.30-beta</version>
       <title>Transformalize Transform using Jint</title>
       <authors>Dale Newman</authors>
       <owners>Dale Newman</owners>

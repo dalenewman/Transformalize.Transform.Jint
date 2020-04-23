@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Transformalize.Validators.Jint</RootNamespace>
     <AssemblyName>Transformalize.Validate.Jint</AssemblyName>
-    <Version>0.6.28</Version>
+    <Version>0.6.30-beta</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,5 +15,7 @@
   <Import Project="..\Transformalize.Validate.Jint.Shared\Transformalize.Validate.Jint.Shared.projitems" Label="Shared" />
 
   <Import Project="..\Transformalize.Jint.Shared\Transformalize.Jint.Shared.projitems" Label="Shared" />
+
+  <Import Project="..\Transformalize.Jint.2.Shared\Transformalize.Jint.2.Shared.projitems" Label="Shared" />
 
 </Project>

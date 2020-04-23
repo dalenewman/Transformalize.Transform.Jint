@@ -17,7 +17,6 @@
 #endregion
 using Cfg.Net.Contracts;
 using Jint;
-using Jint.Parser;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +30,7 @@ namespace Transformalize.Transforms.Jint {
 
       private readonly Field[] _input;
       private readonly Engine _jint = new Engine();
-      private readonly ParameterMatcher _parameterMatcher = new ParameterMatcher(new JavaScriptParser());
+      private readonly ParameterMatcher _parameterMatcher = new ParameterMatcher();
       private readonly Dictionary<int, string> _errors = new Dictionary<int, string>();
 
       public JintTransform(IReader reader = null, IContext context = null) : base(context, null) {

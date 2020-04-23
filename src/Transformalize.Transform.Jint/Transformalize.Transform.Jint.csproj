@@ -59,5 +59,6 @@
   </ItemGroup>
   <Import Project="..\Transformalize.Transform.Jint.Shared\Transformalize.Transform.Jint.Shared.projitems" Label="Shared" />
   <Import Project="..\Transformalize.Jint.Shared\Transformalize.Jint.Shared.projitems" Label="Shared" />
+  <Import Project="..\Transformalize.Jint.2.Shared\Transformalize.Jint.2.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

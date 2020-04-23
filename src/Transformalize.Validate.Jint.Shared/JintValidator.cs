@@ -22,7 +22,6 @@ using System.Linq;
 using Cfg.Net.Contracts;
 using Jint;
 using Jint.Native;
-using Jint.Parser;
 using Transformalize.Configuration;
 using Transformalize.Contracts;
 using Transformalize.Jint;
@@ -36,10 +35,8 @@ namespace Transformalize.Validators.Jint {
 
       private readonly Field[] _input;
       private readonly Engine _jint = new Engine();
-      private readonly JavaScriptParser _parser = new JavaScriptParser();
       private readonly Dictionary<int, string> _errors = new Dictionary<int, string>();
-      private readonly ParserOptions _parserOptions = new ParserOptions { Tolerant = true };
-      private readonly ParameterMatcher _parameterMatcher = new ParameterMatcher(new JavaScriptParser());
+      private readonly ParameterMatcher _parameterMatcher = new ParameterMatcher();
       private readonly bool _hasHelp;
 
       public JintValidator(IReader reader = null, IContext context = null) : base(context) {
@@ -114,7 +111,7 @@ namespace Transformalize.Validators.Jint {
             if (Context.Operation.Script.Contains(map.Name)) {
                var obj = _jint.Object.Construct(new JsValue[0]);
                foreach(var item in map.Items) {
-                  obj.FastAddProperty(item.From.ToString(), new JsValue(item.To.ToString()), false, true, false);
+                  obj.FastAddProperty(item.From.ToString(), JsValue.FromObject(_jint, item.To), false, true, false);
                }
                _jint.SetValue(map.Name, obj);
             }

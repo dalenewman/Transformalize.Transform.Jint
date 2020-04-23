@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="Transformalize.Container.Autofac" Version="0.6.30-beta" />
+    <PackageReference Include="Transformalize.Provider.Console.Autofac" Version="0.6.28-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Transformalize.Transform.Jint.3.Autofac\Transformalize.Transform.Jint.3.Autofac.csproj" />
+    <ProjectReference Include="..\..\src\Transformalize.Validate.Jint.3.Autofac\Transformalize.Validate.Jint.3.Autofac.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\Test.Integration.Shared\Test.Integration.Shared.projitems" Label="Shared" />
+
+</Project>

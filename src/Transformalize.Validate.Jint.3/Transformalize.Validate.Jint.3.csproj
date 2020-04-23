@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <TargetFramework>netstandard2.0</TargetFramework>
+      <RootNamespace>Transformalize.Validators.Jint</RootNamespace>
+      <AssemblyName>Transformalize.Validate.Jint.3</AssemblyName>
+      <Version>0.6.30-beta</Version>
+      <PackageOutputPath>c:\temp\modules</PackageOutputPath>
+      <Authors>Dale Newman</Authors>
+      <Company>Transformalize</Company>
+      <Description>A Transformalize validator using Jint</Description>
+      <Copyright>Copyright © 2020 Dale Newman</Copyright>
+      <PackageProjectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</PackageProjectUrl>
+      <RepositoryUrl>https://github.com/dalenewman/Transformalize.Transform.Jint.git</RepositoryUrl>
+      <RepositoryType>git</RepositoryType>
+      <PackageTags>etl,transformalize,jint,javascript</PackageTags>
+      <NeutralLanguage>en-US</NeutralLanguage>
+      <PackageLicenseFile>LICENSE</PackageLicenseFile>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <PackageReference Include="Jint" Version="3.0.0-beta-1632" />
+      <PackageReference Include="Transformalize" Version="0.6.29-beta" />
+   </ItemGroup>
+
+   <Import Project="..\Transformalize.Validate.Jint.Shared\Transformalize.Validate.Jint.Shared.projitems" Label="Shared" />
+
+   <Import Project="..\Transformalize.Jint.3.Shared\Transformalize.Jint.3.Shared.projitems" Label="Shared" />
+
+   <Import Project="..\Transformalize.Jint.Shared\Transformalize.Jint.Shared.projitems" Label="Shared" />
+
+   <ItemGroup>
+      <None Include="..\..\LICENSE">
+         <Pack>True</Pack>
+         <PackagePath></PackagePath>
+      </None>
+   </ItemGroup>
+
+</Project>
