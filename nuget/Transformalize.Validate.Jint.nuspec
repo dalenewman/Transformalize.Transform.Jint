@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <package>
+   
    <metadata>
       <id>Transformalize.Validate.Jint</id>
-      <version>0.6.30-beta</version>
+      <version>0.7.6-beta</version>
       <title>Transformalize Validate using Jint</title>
       <authors>Dale Newman</authors>
       <owners>Dale Newman</owners>
-      <licenseUrl>https://github.com/dalenewman/Transformalize.Transform.Jint/blob/master/LICENSE.md</licenseUrl>
+      <license type="expression">Apache-2.0</license>
       <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
       <requireLicenseAcceptance>false</requireLicenseAcceptance>
       <description>Transformalize Validator using Jint</description>
@@ -15,18 +16,22 @@
       <tags>etl</tags>
       <dependencies>
          <group targetFramework="net462">
-            <dependency id="Transformalize" version="0.6.29-beta" />
+            <dependency id="Transformalize" version="0.7.6-beta" />
             <dependency id="Jint" version="2.11.58" />
          </group>
          <group targetFramework="netstandard2.0">
-            <dependency id="Transformalize" version="0.6.29-beta" />
+            <dependency id="Transformalize" version="0.7.6-beta" />
             <dependency id="Jint" version="2.11.58" />
          </group>
       </dependencies>
    </metadata>
+   
    <files>
-      <file src="..\src\Transformalize.Validate.Jint\bin\Release\Transformalize.Validate.Jint.dll" target="lib\net462\Transformalize.Validate.Jint.dll" />
-      <file src="..\src\Transformalize.Validate.Jint.Standard.20\bin\Release\netstandard2.0\Transformalize.Validate.Jint.deps.json" target="lib\netstandard2.0\Transformalize.Validate.Jint.deps.json" />
-      <file src="..\src\Transformalize.Validate.Jint.Standard.20\bin\Release\netstandard2.0\Transformalize.Validate.Jint.dll" target="lib\netstandard2.0\Transformalize.Validate.Jint.dll" />
+      <file src="..\src\Transformalize.Validate.Jint\bin\Debug\Transformalize.Validate.Jint.dll" target="lib\net462\Transformalize.Validate.Jint.dll" />
+      <file src="..\src\Transformalize.Validate.Jint\bin\Debug\Transformalize.Validate.Jint.pdb" target="lib\net462\Transformalize.Validate.Jint.pdb" />
+      <file src="..\src\Transformalize.Validate.Jint.Standard.20\bin\Debug\netstandard2.0\Transformalize.Validate.Jint.deps.json" target="lib\netstandard2.0\Transformalize.Validate.Jint.deps.json" />
+      <file src="..\src\Transformalize.Validate.Jint.Standard.20\bin\Debug\netstandard2.0\Transformalize.Validate.Jint.dll" target="lib\netstandard2.0\Transformalize.Validate.Jint.dll" />
+      <file src="..\src\Transformalize.Validate.Jint.Standard.20\bin\Debug\netstandard2.0\Transformalize.Validate.Jint.pdb" target="lib\netstandard2.0\Transformalize.Validate.Jint.pdb" />
    </files>
+   
 </package>

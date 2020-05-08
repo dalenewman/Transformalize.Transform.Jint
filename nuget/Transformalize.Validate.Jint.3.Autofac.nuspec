@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package>
+   <metadata>
+      <id>Transformalize.Validate.Jint.3.Autofac</id>
+      <version>0.7.6-beta</version>
+      <title>Transformalize Validator using Jint Autofac Module</title>
+      <authors>Dale Newman</authors>
+      <owners>Dale Newman</owners>
+      <license type="expression">Apache-2.0</license>
+      <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <description>Transformalize Validator using Jint Autofac Module</description>
+      <releaseNotes>added .net standard 2.0 target</releaseNotes>
+      <copyright>Copyright 2018-2020</copyright>
+      <tags>etl</tags>
+      <dependencies>
+         <!--<group targetFramework="net462">
+            <dependency id="Transformalize.Transform.Jint" version="0.7.6-beta" />
+            <dependency id="Transformalize.Container.Autofac" version="0.7.6-beta" />
+         </group>-->
+         <group targetFramework="netstandard2.0">
+            <dependency id="Transformalize.Transform.Jint" version="0.7.6-beta" />
+            <dependency id="Transformalize.Container.Autofac" version="0.7.6-beta" />
+         </group>
+      </dependencies>
+   </metadata>
+   <files>
+      <!--<file src="..\src\Transformalize.Validate.Jint.3.Autofac\bin\Debug\Transformalize.Validate.Jint.3.Autofac.dll" target="lib\net462\Transformalize.Validate.Jint.3.Autofac.dll" />
+      <file src="..\src\Transformalize.Validate.Jint.3.Autofac\bin\Debug\Transformalize.Validate.Jint.3.Autofac.pdb" target="lib\net462\Transformalize.Validate.Jint.3.Autofac.pdb" />-->
+      <file src="..\src\Transformalize.Validate.Jint.3.Autofac\bin\Debug\netstandard2.0\Transformalize.Validate.Jint.3.Autofac.deps.json" target="lib\netstandard2.0\Transformalize.Validate.Jint.3.Autofac.deps.json" />
+      <file src="..\src\Transformalize.Validate.Jint.3.Autofac\bin\Debug\netstandard2.0\Transformalize.Validate.Jint.3.Autofac.dll" target="lib\netstandard2.0\Transformalize.Validate.Jint.3.Autofac.dll" />
+      <file src="..\src\Transformalize.Validate.Jint.3.Autofac\bin\Debug\netstandard2.0\Transformalize.Validate.Jint.3.Autofac.pdb" target="lib\netstandard2.0\Transformalize.Validate.Jint.3.Autofac.pdb" />
+   </files>
+</package>

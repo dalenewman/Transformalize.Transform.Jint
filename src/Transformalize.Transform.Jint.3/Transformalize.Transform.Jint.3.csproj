@@ -2,9 +2,10 @@
 
    <PropertyGroup>
       <TargetFramework>netstandard2.0</TargetFramework>
+      <IncludeSymbols>true</IncludeSymbols>
       <RootNamespace>Transformalize.Transforms.Jint</RootNamespace>
       <AssemblyName>Transformalize.Transform.Jint.3</AssemblyName>
-      <Version>0.6.30-beta</Version>
+      <Version>0.7.6-beta</Version>
       <PackageOutputPath>c:\temp\modules</PackageOutputPath>
       <Authors>Dale Newman</Authors>
       <Company>Transformalize</Company>
@@ -20,7 +21,7 @@
 
    <ItemGroup>
       <PackageReference Include="Jint" Version="3.0.0-beta-1632" />
-      <PackageReference Include="Transformalize" Version="0.6.29-beta" />
+      <PackageReference Include="Transformalize" Version="0.7.6-beta" />
    </ItemGroup>
 
    <Import Project="..\Transformalize.Jint.3.Shared\Transformalize.Jint.3.Shared.projitems" Label="Shared" />

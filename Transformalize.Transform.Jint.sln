@@ -13,9 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmark", "src\Benchmark\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{8FE1844F-26A4-47BE-9507-F0333D42FABE}"
 	ProjectSection(SolutionItems) = preProject
+		nuget\myget.bat = nuget\myget.bat
 		nuget\nuget.bat = nuget\nuget.bat
+		nuget\Transformalize.Transform.Jint.3.Autofac.nuspec = nuget\Transformalize.Transform.Jint.3.Autofac.nuspec
+		nuget\Transformalize.Transform.Jint.3.nuspec = nuget\Transformalize.Transform.Jint.3.nuspec
 		nuget\Transformalize.Transform.Jint.Autofac.nuspec = nuget\Transformalize.Transform.Jint.Autofac.nuspec
 		nuget\Transformalize.Transform.Jint.nuspec = nuget\Transformalize.Transform.Jint.nuspec
+		nuget\Transformalize.Validate.Jint.3.Autofac.nuspec = nuget\Transformalize.Validate.Jint.3.Autofac.nuspec
+		nuget\Transformalize.Validate.Jint.3.nuspec = nuget\Transformalize.Validate.Jint.3.nuspec
 		nuget\Transformalize.Validate.Jint.Autofac.nuspec = nuget\Transformalize.Validate.Jint.Autofac.nuspec
 		nuget\Transformalize.Validate.Jint.nuspec = nuget\Transformalize.Validate.Jint.nuspec
 	EndProjectSection
@@ -54,17 +59,17 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Validate.Jin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Validate.Jint.Autofac.Standard.20", "src\Transformalize.Validate.Jint.Autofac.Standard.20\Transformalize.Validate.Jint.Autofac.Standard.20.csproj", "{7ABA8FB4-4969-497E-A5E3-F74F4DC24E32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Transform.Jint.3", "src\Transformalize.Transform.Jint.3\Transformalize.Transform.Jint.3.csproj", "{62BAF26E-23D3-4206-8AD1-CB354A550647}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Jint.3", "src\Transformalize.Transform.Jint.3\Transformalize.Transform.Jint.3.csproj", "{62BAF26E-23D3-4206-8AD1-CB354A550647}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Jint.3.Shared", "src\Transformalize.Jint.3.Shared\Transformalize.Jint.3.Shared.shproj", "{984DAF26-8761-4CDE-89EF-DF5BDD40882F}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Jint.2.Shared", "src\Transformalize.Jint.2.Shared\Transformalize.Jint.2.Shared.shproj", "{934CD048-6E77-4AEE-A351-806F5201F351}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Validate.Jint.3", "src\Transformalize.Validate.Jint.3\Transformalize.Validate.Jint.3.csproj", "{C8BDE647-50DC-476D-A178-D60D35F85564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Validate.Jint.3", "src\Transformalize.Validate.Jint.3\Transformalize.Validate.Jint.3.csproj", "{C8BDE647-50DC-476D-A178-D60D35F85564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Transform.Jint.3.Autofac", "src\Transformalize.Transform.Jint.3.Autofac\Transformalize.Transform.Jint.3.Autofac.csproj", "{4174A106-FB43-409B-9012-2300CAFEA9F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Jint.3.Autofac", "src\Transformalize.Transform.Jint.3.Autofac\Transformalize.Transform.Jint.3.Autofac.csproj", "{4174A106-FB43-409B-9012-2300CAFEA9F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Validate.Jint.3.Autofac", "src\Transformalize.Validate.Jint.3.Autofac\Transformalize.Validate.Jint.3.Autofac.csproj", "{278797AF-9B35-4DBE-AF0C-9435D7D5605C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Validate.Jint.3.Autofac", "src\Transformalize.Validate.Jint.3.Autofac\Transformalize.Validate.Jint.3.Autofac.csproj", "{278797AF-9B35-4DBE-AF0C-9435D7D5605C}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Test.Integration.Shared", "test\Test.Integration.Shared\Test.Integration.Shared.shproj", "{74BB6996-13C0-49EA-B3A7-3AA5E03134E8}"
 EndProject
@@ -72,9 +77,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8B807627-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Integration", "test\Test.Integration\Test.Integration.csproj", "{BF4A2C6D-3E58-4714-A0BC-0A85E9B09F69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Integration.Core", "src\Test.Integration.Core\Test.Integration.Core.csproj", "{135A87FA-6545-4365-8E78-D637635C04B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Integration.Core", "src\Test.Integration.Core\Test.Integration.Core.csproj", "{135A87FA-6545-4365-8E78-D637635C04B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Integration.Jint.v3.Core", "test\Test.Integration.Jint.v3.Core\Test.Integration.Jint.v3.Core.csproj", "{92D7FE4F-B713-4600-A381-32D03439E110}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Integration.Jint.v3.Core", "test\Test.Integration.Jint.v3.Core\Test.Integration.Jint.v3.Core.csproj", "{92D7FE4F-B713-4600-A381-32D03439E110}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
