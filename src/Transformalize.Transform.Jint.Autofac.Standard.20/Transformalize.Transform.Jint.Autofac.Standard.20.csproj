@@ -10,7 +10,7 @@
   <Import Project="..\Transformalize.Transform.Jint.Autofac.Shared\Transformalize.Transform.Jint.Autofac.Shared.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="Transformalize.Container.Autofac" Version="0.7.6-beta" />
+    <PackageReference Include="Transformalize.Container.Autofac" Version="0.7.15-beta" />
   </ItemGroup>
 
   <ItemGroup>

@@ -61,12 +61,19 @@ namespace Transformalize.Validators.Jint {
             }
          }
 
-         // automatic parameter binding
-         if (!Context.Operation.Parameters.Any()) {
-            var parameters = _parameterMatcher.Match(Context.Operation.Script, Context.GetAllEntityFields());
-            foreach (var parameter in parameters) {
-               Context.Operation.Parameters.Add(new Parameter { Field = parameter, Entity = Context.Entity.Alias });
+         var tester = new ScriptTester(context);
+
+         if (tester.Passes(Context.Operation.Script)) {
+            // automatic parameter binding
+            if (!Context.Operation.Parameters.Any()) {
+               var parameters = _parameterMatcher.Match(Context.Operation.Script, Context.GetAllEntityFields());
+               foreach (var parameter in parameters) {
+                  Context.Operation.Parameters.Add(new Parameter { Field = parameter, Entity = Context.Entity.Alias });
+               }
             }
+         } else {
+            Run = false;
+            return;
          }
 
          // for js, always add the input parameter
@@ -76,9 +83,7 @@ namespace Transformalize.Validators.Jint {
          if (input.All(f => f.Alias != MessageField.Alias)) {
             input.Add(Context.Entity.GetAllFields().First(f => f.Alias == MessageField.Alias));
          }
-         _input = input.ToArray();
-
-         var tester = new ScriptTester(context);
+         _input = input.ToArray();         
 
          if (Context.Process.Scripts.Any(s => s.Global && (s.Language == "js" || s.Language == Constants.DefaultSetting && s.File.EndsWith(".js", StringComparison.OrdinalIgnoreCase)))) {
             // load any global scripts

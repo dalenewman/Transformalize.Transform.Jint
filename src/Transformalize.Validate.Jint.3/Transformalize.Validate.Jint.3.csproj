@@ -21,7 +21,7 @@
 
    <ItemGroup>
       <PackageReference Include="Jint" Version="3.0.0-beta-1632" />
-      <PackageReference Include="Transformalize" Version="0.7.6-beta" />
+      <PackageReference Include="Transformalize" Version="0.7.17-beta" />
    </ItemGroup>
 
    <Import Project="..\Transformalize.Validate.Jint.Shared\Transformalize.Validate.Jint.Shared.projitems" Label="Shared" />

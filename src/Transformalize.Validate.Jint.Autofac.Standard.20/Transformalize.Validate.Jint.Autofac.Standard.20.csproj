@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Transformalize.Container.Autofac" Version="0.7.6-beta" />
+    <PackageReference Include="Transformalize.Container.Autofac" Version="0.7.15-beta" />
   </ItemGroup>
 
   <ItemGroup>

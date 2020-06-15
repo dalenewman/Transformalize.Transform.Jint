@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Transformalize.Transforms.Jint</RootNamespace>
     <AssemblyName>Transformalize.Transform.Jint</AssemblyName>
-    <Version>0.7.6-beta</Version>
+    <Version>0.7.18-beta</Version>
   </PropertyGroup>
 
   <Import Project="..\Transformalize.Transform.Jint.Shared\Transformalize.Transform.Jint.Shared.projitems" Label="Shared" />
@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="Jint" Version="2.11.58" />
-    <PackageReference Include="Transformalize" Version="0.7.6-beta" />
+    <PackageReference Include="Transformalize" Version="0.7.17-beta" />
   </ItemGroup>
 
 </Project>

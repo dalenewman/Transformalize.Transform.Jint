@@ -55,24 +55,29 @@ namespace Transformalize.Transforms.Jint {
             }
          }
 
-         // automatic parameter binding
-         if (!Context.Operation.Parameters.Any()) {
-            var parameters = _parameterMatcher.Match(Context.Operation.Script, Context.GetAllEntityFields());
-            foreach (var parameter in parameters) {
-               Context.Operation.Parameters.Add(new Parameter { Field = parameter, Entity = Context.Entity.Alias });
+         var tester = new ScriptTester(context);
+
+         if (tester.Passes(Context.Operation.Script)) {
+            // automatic parameter binding
+            if (!Context.Operation.Parameters.Any()) {
+               var parameters = _parameterMatcher.Match(Context.Operation.Script, Context.GetAllEntityFields());
+               foreach (var parameter in parameters) {
+                  Context.Operation.Parameters.Add(new Parameter { Field = parameter, Entity = Context.Entity.Alias });
+               }
             }
+         } else {
+            Run = false;
+            return;
          }
 
          // for js, always add the input parameter
          _input = MultipleInput().Union(new[] { Context.Field }).Distinct().ToArray();
 
-         var tester = new ScriptTester(context);
-
          if (Context.Process.Scripts.Any(s => s.Global && (s.Language == "js" || s.Language == Constants.DefaultSetting && s.File.EndsWith(".js", StringComparison.OrdinalIgnoreCase)))) {
             // load any global scripts
             foreach (var sc in Context.Process.Scripts.Where(s => s.Global && (s.Language == "js" || s.Language == Constants.DefaultSetting && s.File.EndsWith(".js", StringComparison.OrdinalIgnoreCase)))) {
                var content = scriptReader.Read(Context.Process.Scripts.First(s => s.Name == sc.Name));
-               if(tester.Passes(content)) {
+               if (tester.Passes(content)) {
                   _jint.Execute(content);
                } else {
                   Run = false;
@@ -107,6 +112,7 @@ namespace Transformalize.Transforms.Jint {
             foreach (var row in rows) {
                yield return row;
             }
+            yield break;
          }
 
          bool tryFirst = true;
