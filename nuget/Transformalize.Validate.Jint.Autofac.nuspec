@@ -2,7 +2,7 @@
 <package>
    <metadata>
       <id>Transformalize.Validate.Jint.Autofac</id>
-      <version>0.7.17-beta</version>
+      <version>0.8.1-beta</version>
       <title>Transformalize Validator using Jint Autofac Module</title>
       <authors>Dale Newman</authors>
       <owners>Dale Newman</owners>
@@ -15,12 +15,12 @@
       <tags>etl</tags>
       <dependencies>
          <group targetFramework="net462">
-            <dependency id="Transformalize.Validate.Jint" version="0.7.17-beta" />
-            <dependency id="Transformalize.Container.Autofac" version="0.7.15-beta" />
+            <dependency id="Transformalize.Validate.Jint" version="0.8.1-beta" />
+            <dependency id="Transformalize.Container.Autofac" version="0.8.1-beta" />
          </group>
          <group targetFramework="netstandard2.0">
-            <dependency id="Transformalize.Validate.Jint" version="0.7.17-beta" />
-            <dependency id="Transformalize.Container.Autofac" version="0.7.15-beta" />
+            <dependency id="Transformalize.Validate.Jint" version="0.8.1-beta" />
+            <dependency id="Transformalize.Container.Autofac" version="0.8.1-beta" />
          </group>
       </dependencies>
    </metadata>

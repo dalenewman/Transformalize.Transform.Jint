@@ -3,7 +3,7 @@
    
    <metadata>
       <id>Transformalize.Transform.Jint.3</id>
-      <version>0.7.18-beta</version>
+      <version>0.8.1-beta</version>
       <title>Transformalize Transform using Jint</title>
       <authors>Dale Newman</authors>
       <owners>Dale Newman</owners>
@@ -16,7 +16,7 @@
       <tags>etl</tags>
       <dependencies>
          <group targetFramework="netstandard2.0">
-            <dependency id="Transformalize" version="0.7.17-beta" />
+            <dependency id="Transformalize" version="0.8.1-beta" />
             <dependency id="Jint" version="3.0.0-beta-1632" />
          </group>
       </dependencies>

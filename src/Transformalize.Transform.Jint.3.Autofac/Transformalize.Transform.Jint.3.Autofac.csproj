@@ -5,7 +5,7 @@
       <RootNamespace>Transformalize.Transforms.Jint.Autofac</RootNamespace>
       <AssemblyName>Transformalize.Transform.Jint.3.Autofac</AssemblyName>
       <IncludeSymbols>true</IncludeSymbols>
-      <Version>0.7.7-beta</Version>
+      <Version>0.8.1-beta</Version>
       <PackageOutputPath>c:\temp\modules</PackageOutputPath>
       <Authors>Dale Newman</Authors>
       <Company>Transformalize</Company>
@@ -22,7 +22,7 @@
    <Import Project="..\Transformalize.Transform.Jint.Autofac.Shared\Transformalize.Transform.Jint.Autofac.Shared.projitems" Label="Shared" />
 
    <ItemGroup>
-      <PackageReference Include="Transformalize.Container.Autofac" Version="0.7.15-beta" />
+      <PackageReference Include="Transformalize.Container.Autofac" Version="0.8.1-beta" />
    </ItemGroup>
 
    <ItemGroup>

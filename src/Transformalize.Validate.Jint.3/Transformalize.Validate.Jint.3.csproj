@@ -5,7 +5,7 @@
       <RootNamespace>Transformalize.Validators.Jint</RootNamespace>
       <AssemblyName>Transformalize.Validate.Jint.3</AssemblyName>
       <IncludeSymbols>true</IncludeSymbols>
-      <Version>0.7.6-beta</Version>
+      <Version>0.8.1-beta</Version>
       <PackageOutputPath>c:\temp\modules</PackageOutputPath>
       <Authors>Dale Newman</Authors>
       <Company>Transformalize</Company>
@@ -21,7 +21,7 @@
 
    <ItemGroup>
       <PackageReference Include="Jint" Version="3.0.0-beta-1632" />
-      <PackageReference Include="Transformalize" Version="0.7.17-beta" />
+      <PackageReference Include="Transformalize" Version="0.8.1-beta" />
    </ItemGroup>
 
    <Import Project="..\Transformalize.Validate.Jint.Shared\Transformalize.Validate.Jint.Shared.projitems" Label="Shared" />

@@ -4,11 +4,11 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Transformalize.Validators.Jint.Autofac</RootNamespace>
     <AssemblyName>Transformalize.Validate.Jint.Autofac</AssemblyName>
-    <Version>0.7.8-beta</Version>
+    <Version>0.8.1-beta</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Transformalize.Container.Autofac" Version="0.7.15-beta" />
+    <PackageReference Include="Transformalize.Container.Autofac" Version="0.8.1-beta" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,13 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Transformalize.Transforms.Jint.Autofac</RootNamespace>
     <AssemblyName>Transformalize.Transform.Jint.Autofac</AssemblyName>
-    <Version>0.7.6-beta</Version>
+    <Version>0.8.1-beta</Version>
   </PropertyGroup>
 
   <Import Project="..\Transformalize.Transform.Jint.Autofac.Shared\Transformalize.Transform.Jint.Autofac.Shared.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="Transformalize.Container.Autofac" Version="0.7.15-beta" />
+    <PackageReference Include="Transformalize.Container.Autofac" Version="0.8.1-beta" />
   </ItemGroup>
 
   <ItemGroup>
