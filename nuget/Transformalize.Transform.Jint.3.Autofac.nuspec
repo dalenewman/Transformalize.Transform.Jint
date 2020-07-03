@@ -3,7 +3,7 @@
    
    <metadata>
       <id>Transformalize.Transform.Jint.3.Autofac</id>
-      <version>0.8.1-beta</version>
+      <version>0.8.15-beta</version>
       <title>Transformalize Transform using Jint Autofac Module</title>
       <authors>Dale Newman</authors>
       <owners>Dale Newman</owners>
@@ -16,8 +16,8 @@
       <tags>etl</tags>
       <dependencies>
          <group targetFramework="netstandard2.0">
-            <dependency id="Transformalize.Transform.Jint.3" version="0.8.1-beta" />
-            <dependency id="Transformalize.Container.Autofac" version="0.8.1-beta" />
+            <dependency id="Transformalize.Transform.Jint.3" version="0.8.15-beta" />
+            <dependency id="Transformalize.Container.Autofac" version="0.8.15-beta" />
          </group>
       </dependencies>
    </metadata>

@@ -42,17 +42,17 @@
     <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Cfg.Net.Environment, Version=0.12.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Cfg-NET.Environment.0.12.2\lib\netstandard2.0\Cfg.Net.Environment.dll</HintPath>
+    <Reference Include="Cfg.Net.Environment, Version=0.13.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cfg-NET.Environment.0.13.2-beta\lib\netstandard2.0\Cfg.Net.Environment.dll</HintPath>
     </Reference>
     <Reference Include="Cfg.Net.Reader, Version=0.12.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Cfg-NET.Reader.0.12.2\lib\net45\Cfg.Net.Reader.dll</HintPath>
+      <HintPath>..\..\packages\Cfg-NET.Reader.0.13.2-beta\lib\net45\Cfg.Net.Reader.dll</HintPath>
     </Reference>
-    <Reference Include="Cfg.Net.Shorthand, Version=0.12.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Cfg-NET.Shorthand.0.12.2\lib\netstandard2.0\Cfg.Net.Shorthand.dll</HintPath>
+    <Reference Include="Cfg.Net.Shorthand, Version=0.13.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cfg-NET.Shorthand.0.13.2-beta\lib\netstandard2.0\Cfg.Net.Shorthand.dll</HintPath>
     </Reference>
-    <Reference Include="CfgNet, Version=0.12.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Cfg-NET.0.12.2\lib\net462\CfgNet.dll</HintPath>
+    <Reference Include="CfgNet, Version=0.13.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cfg-NET.0.13.2-beta\lib\net462\CfgNet.dll</HintPath>
     </Reference>
     <Reference Include="DateMath, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DateMath.1.1.0\lib\net462\DateMath.dll</HintPath>
@@ -65,17 +65,17 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="Transformalize, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.0.8.1-beta\lib\net462\Transformalize.dll</HintPath>
+    <Reference Include="Transformalize, Version=0.8.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.0.8.14-beta\lib\net462\Transformalize.dll</HintPath>
     </Reference>
-    <Reference Include="Transformalize.Container.Autofac, Version=0.8.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.Container.Autofac.0.8.1-beta\lib\net462\Transformalize.Container.Autofac.dll</HintPath>
+    <Reference Include="Transformalize.Container.Autofac, Version=0.8.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.Container.Autofac.0.8.15-beta\lib\net462\Transformalize.Container.Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Transformalize.Provider.Console, Version=0.8.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.Provider.Console.0.8.1-beta\lib\net462\Transformalize.Provider.Console.dll</HintPath>
+      <HintPath>..\..\packages\Transformalize.Provider.Console.0.8.2-beta\lib\net462\Transformalize.Provider.Console.dll</HintPath>
     </Reference>
     <Reference Include="Transformalize.Provider.Console.Autofac, Version=0.8.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.Provider.Console.Autofac.0.8.1-beta\lib\netstandard2.0\Transformalize.Provider.Console.Autofac.dll</HintPath>
+      <HintPath>..\..\packages\Transformalize.Provider.Console.Autofac.0.8.2-beta\lib\netstandard2.0\Transformalize.Provider.Console.Autofac.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
