@@ -4,7 +4,7 @@ using System.Linq;
 using Transformalize.Configuration;
 using Transformalize.Contracts;
 
-namespace Transformalize.Jint {
+namespace Transformalize.Validators.Jint {
    public class ScriptReader {
 
       private readonly IContext _context;

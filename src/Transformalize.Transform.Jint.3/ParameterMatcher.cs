@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Transformalize.Configuration;
 
-namespace Transformalize.Jint {
+namespace Transformalize.Transforms.Jint {
 
    public class ParameterMatcher : IParameterMatcher {
 

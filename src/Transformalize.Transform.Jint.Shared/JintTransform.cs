@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Transformalize.Configuration;
 using Transformalize.Contracts;
-using Transformalize.Jint;
 
 namespace Transformalize.Transforms.Jint {
 

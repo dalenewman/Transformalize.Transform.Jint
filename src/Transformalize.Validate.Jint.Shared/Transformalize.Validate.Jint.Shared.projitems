@@ -9,6 +9,8 @@
     <Import_RootNamespace>Transformalize.Validate.Jint.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)IParameterMatcher.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)JintValidator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScriptReader.cs" />
   </ItemGroup>
 </Project>

@@ -1,37 +1,34 @@
 <?xml version="1.0"?>
 <package>
-   
-   <metadata>
-      <id>Transformalize.Transform.Jint.Autofac</id>
-      <version>0.8.15-beta</version>
-      <title>Transformalize Transform using Jint Autofac Module</title>
-      <authors>Dale Newman</authors>
-      <owners>Dale Newman</owners>
-      <license type="expression">Apache-2.0</license>
-      <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
-      <requireLicenseAcceptance>false</requireLicenseAcceptance>
-      <description>Transformalize Transform using Jint Autofac Module</description>
-      <releaseNotes></releaseNotes>
-      <copyright>Copyright 2018-2020</copyright>
-      <tags>etl</tags>
-      <dependencies>
-         <group targetFramework="net462">
-            <dependency id="Transformalize.Transform.Jint" version="0.8.15-beta" />
-            <dependency id="Transformalize.Container.Autofac" version="0.8.15-beta" />
-         </group>
-         <group targetFramework="netstandard2.0">
-            <dependency id="Transformalize.Transform.Jint" version="0.8.15-beta" />
-            <dependency id="Transformalize.Container.Autofac" version="0.8.15-beta" />
-         </group>
-      </dependencies>
-   </metadata>
-
-   <files>
-      <file src="..\src\Transformalize.Transform.Jint.Autofac\bin\Debug\Transformalize.Transform.Jint.Autofac.dll" target="lib\net462\Transformalize.Transform.Jint.Autofac.dll" />
-      <file src="..\src\Transformalize.Transform.Jint.Autofac\bin\Debug\Transformalize.Transform.Jint.Autofac.pdb" target="lib\net462\Transformalize.Transform.Jint.Autofac.pdb" />
-      <file src="..\src\Transformalize.Transform.Jint.Autofac.Standard.20\bin\Debug\netstandard2.0\Transformalize.Transform.Jint.Autofac.deps.json" target="lib\netstandard2.0\Transformalize.Transform.Jint.Autofac.deps.json" />
-      <file src="..\src\Transformalize.Transform.Jint.Autofac.Standard.20\bin\Debug\netstandard2.0\Transformalize.Transform.Jint.Autofac.dll" target="lib\netstandard2.0\Transformalize.Transform.Jint.Autofac.dll" />
-      <file src="..\src\Transformalize.Transform.Jint.Autofac.Standard.20\bin\Debug\netstandard2.0\Transformalize.Transform.Jint.Autofac.pdb" target="lib\netstandard2.0\Transformalize.Transform.Jint.Autofac.pdb" />
-   </files>
-   
+  <metadata>
+    <id>Transformalize.Transform.Jint.Autofac</id>
+    <version>0.8.16-beta</version>
+    <title>Transformalize Transform using Jint Autofac Module</title>
+    <authors>Dale Newman</authors>
+    <owners>Dale Newman</owners>
+    <license type="expression">Apache-2.0</license>
+    <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Transformalize Transform using Jint Autofac Module</description>
+    <releaseNotes>remove the odd usage of shared projects</releaseNotes>
+    <copyright>Copyright 2018-2020</copyright>
+    <tags>etl</tags>
+    <dependencies>
+      <group targetFramework="net462">
+        <dependency id="Transformalize.Transform.Jint" version="0.8.16-beta" />
+        <dependency id="Transformalize.Container.Autofac" version="0.8.15-beta" />
+      </group>
+      <group targetFramework="netstandard2.0">
+        <dependency id="Transformalize.Transform.Jint" version="0.8.16-beta" />
+        <dependency id="Transformalize.Container.Autofac" version="0.8.15-beta" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\Transformalize.Transform.Jint.Autofac\bin\Debug\Transformalize.Transform.Jint.Autofac.dll" target="lib\net462\Transformalize.Transform.Jint.Autofac.dll" />
+    <file src="..\src\Transformalize.Transform.Jint.Autofac\bin\Debug\Transformalize.Transform.Jint.Autofac.pdb" target="lib\net462\Transformalize.Transform.Jint.Autofac.pdb" />
+    <file src="..\src\Transformalize.Transform.Jint.Autofac.Standard.20\bin\Debug\netstandard2.0\Transformalize.Transform.Jint.Autofac.deps.json" target="lib\netstandard2.0\Transformalize.Transform.Jint.Autofac.deps.json" />
+    <file src="..\src\Transformalize.Transform.Jint.Autofac.Standard.20\bin\Debug\netstandard2.0\Transformalize.Transform.Jint.Autofac.dll" target="lib\netstandard2.0\Transformalize.Transform.Jint.Autofac.dll" />
+    <file src="..\src\Transformalize.Transform.Jint.Autofac.Standard.20\bin\Debug\netstandard2.0\Transformalize.Transform.Jint.Autofac.pdb" target="lib\netstandard2.0\Transformalize.Transform.Jint.Autofac.pdb" />
+  </files>
 </package>

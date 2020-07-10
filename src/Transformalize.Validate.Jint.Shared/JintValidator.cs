@@ -24,7 +24,6 @@ using Jint;
 using Jint.Native;
 using Transformalize.Configuration;
 using Transformalize.Contracts;
-using Transformalize.Jint;
 
 namespace Transformalize.Validators.Jint {
 

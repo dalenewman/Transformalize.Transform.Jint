@@ -1,7 +1,7 @@
 ﻿using Esprima;
 using Transformalize.Contracts;
 
-namespace Transformalize.Jint {
+namespace Transformalize.Validators.Jint {
 
    public class ScriptTester {
 

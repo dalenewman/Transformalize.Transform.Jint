@@ -8,8 +8,4 @@
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>Transformalize.Jint.3.Shared</Import_RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)ParameterMatcher.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ScriptTester.cs" />
-  </ItemGroup>
 </Project>
