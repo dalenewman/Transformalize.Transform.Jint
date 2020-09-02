@@ -4,7 +4,7 @@
     <RootNamespace>Transformalize.Validators.Jint.Autofac</RootNamespace>
     <AssemblyName>Transformalize.Validate.Jint.3.Autofac</AssemblyName>
     <IncludeSymbols>true</IncludeSymbols>
-    <Version>0.8.16-beta</Version>
+    <Version>0.8.19-beta</Version>
     <PackageOutputPath>c:\temp\modules</PackageOutputPath>
     <Authors>Dale Newman</Authors>
     <Company>Transformalize</Company>
@@ -18,7 +18,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Transformalize.Container.Autofac" Version="0.8.15-beta" />
+    <PackageReference Include="Transformalize.Container.Autofac" Version="0.8.23-beta" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Transformalize.Validate.Jint.3\Transformalize.Validate.Jint.3.csproj" />

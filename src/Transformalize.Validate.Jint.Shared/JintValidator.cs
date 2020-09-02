@@ -84,9 +84,9 @@ namespace Transformalize.Validators.Jint {
          }
          _input = input.ToArray();         
 
-         if (Context.Process.Scripts.Any(s => s.Global && (s.Language == "js" || s.Language == Constants.DefaultSetting && s.File.EndsWith(".js", StringComparison.OrdinalIgnoreCase)))) {
+         if (Context.Process.Scripts.Any(s => s.Global && (s.Language == "js" || s.Language == Constants.DefaultSetting && s.File != null && s.File.EndsWith(".js", StringComparison.OrdinalIgnoreCase)))) {
             // load any global scripts
-            foreach (var sc in Context.Process.Scripts.Where(s => s.Global && (s.Language == "js" || s.Language == Constants.DefaultSetting && s.File.EndsWith(".js", StringComparison.OrdinalIgnoreCase)))) {
+            foreach (var sc in Context.Process.Scripts.Where(s => s.Global && (s.Language == "js" || s.Language == Constants.DefaultSetting && s.File != null && s.File.EndsWith(".js", StringComparison.OrdinalIgnoreCase)))) {
                var content = scriptReader.Read(Context.Process.Scripts.First(s => s.Name == sc.Name));
                if (tester.Passes(content)) {
                   _jint.Execute(content);
