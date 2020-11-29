@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Transformalize.Validate.Jint.3</id>
-    <version>0.8.19-beta</version>
+    <version>0.8.29-beta</version>
     <title>Transformalize Validate using Jint</title>
     <authors>Dale Newman</authors>
     <owners>Dale Newman</owners>
@@ -15,7 +15,7 @@
     <tags>etl</tags>
     <dependencies>
       <group targetFramework="netstandard2.0">
-        <dependency id="Transformalize" version="0.8.22-beta" />
+        <dependency id="Transformalize" version="0.8.29-beta" />
         <dependency id="Jint" version="3.0.0-beta-1632" />
       </group>
     </dependencies>
