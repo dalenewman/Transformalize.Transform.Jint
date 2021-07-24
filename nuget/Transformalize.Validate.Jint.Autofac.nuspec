@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Transformalize.Validate.Jint.Autofac</id>
-    <version>0.8.29-beta</version>
+    <version>0.8.41-beta</version>
     <title>Transformalize Validator using Jint Autofac Module</title>
     <authors>Dale Newman</authors>
     <owners>Dale Newman</owners>
@@ -10,17 +10,18 @@
     <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Transformalize Validator using Jint Autofac Module</description>
-    <releaseNotes>remove the odd usage of shared projects</releaseNotes>
-    <copyright>Copyright 2018-2020</copyright>
+    <releaseNotes>
+    </releaseNotes>
+    <copyright>Copyright 2018-2021</copyright>
     <tags>etl</tags>
     <dependencies>
       <group targetFramework="net462">
-        <dependency id="Transformalize.Validate.Jint" version="0.8.29-beta" />
-        <dependency id="Transformalize.Container.Autofac" version="0.8.29-beta" />
+        <dependency id="Transformalize.Validate.Jint" version="0.8.41-beta" />
+        <dependency id="Transformalize.Container.Autofac" version="0.8.41-beta" />
       </group>
       <group targetFramework="netstandard2.0">
-        <dependency id="Transformalize.Validate.Jint" version="0.8.29-beta" />
-        <dependency id="Transformalize.Container.Autofac" version="0.8.29-beta" />
+        <dependency id="Transformalize.Validate.Jint" version="0.8.41-beta" />
+        <dependency id="Transformalize.Container.Autofac" version="0.8.41-beta" />
       </group>
     </dependencies>
   </metadata>

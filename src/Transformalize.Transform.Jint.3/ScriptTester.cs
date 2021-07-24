@@ -14,7 +14,7 @@ namespace Transformalize.Transforms.Jint {
 
       public bool Passes(string script) {
          try {
-            var program = new JavaScriptParser(script, _parserOptions).ParseProgram();
+            var program = new JavaScriptParser(script, _parserOptions).ParseScript();
          } catch (ParserException ex) {
             _context.Error(ex.Message);
             Utility.CodeToError(_context, script);

@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Running;
 using Transformalize.Configuration;
 using Transformalize.Containers.Autofac;
@@ -51,8 +52,11 @@ namespace Benchmark {
    }
 
    public class Program {
+
       private static void Main(string[] args) {
-         BenchmarkRunner.Run<Benchmarks>();
+         var config = DefaultConfig.Instance.With(ConfigOptions.DisableOptimizationsValidator);
+         BenchmarkRunner.Run<Benchmarks>(config);
       }
    }
+   
 }

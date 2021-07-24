@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.1.1" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.5" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.5" />
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
-    <PackageReference Include="Transformalize.Container.Autofac" Version="0.8.29-beta" />
+    <PackageReference Include="Transformalize.Container.Autofac" Version="0.8.41-beta" />
     <PackageReference Include="Transformalize.Provider.Console.Autofac" Version="0.8.29-beta" />
   </ItemGroup>
 

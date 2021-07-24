@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Transformalize.Transform.Jint.3</id>
-    <version>0.8.29-beta</version>
+    <version>0.8.41-beta</version>
     <title>Transformalize Transform using Jint</title>
     <authors>Dale Newman</authors>
     <owners>Dale Newman</owners>
@@ -10,13 +10,14 @@
     <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Transformalize Transform using Jint</description>
-    <releaseNotes>remove the odd usage of shared projects</releaseNotes>
-    <copyright>Copyright 2018-2020</copyright>
+    <releaseNotes>
+    </releaseNotes>
+    <copyright>Copyright 2018-2021</copyright>
     <tags>etl</tags>
     <dependencies>
       <group targetFramework="netstandard2.0">
-        <dependency id="Transformalize" version="0.8.29-beta" />
-        <dependency id="Jint" version="3.0.0-beta-1632" />
+        <dependency id="Transformalize" version="0.8.41-beta" />
+        <dependency id="Jint" version="3.0.0-beta-2032" />
       </group>
     </dependencies>
   </metadata>

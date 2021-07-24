@@ -12,7 +12,7 @@ namespace Transformalize.Transforms.Jint {
 
          var parser = new JavaScriptParser(script, new ParserOptions() { Tokens = true });
 
-         return parser.ParseProgram()
+         return parser.ParseScript()
             .DescendantNodesAndSelf()
             .Where(n => n.Type == Nodes.Identifier)
             .Select(n => n.As<Identifier>())
