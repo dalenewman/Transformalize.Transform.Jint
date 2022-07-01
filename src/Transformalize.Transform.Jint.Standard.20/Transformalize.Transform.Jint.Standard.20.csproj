@@ -3,7 +3,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Transformalize.Transforms.Jint</RootNamespace>
     <AssemblyName>Transformalize.Transform.Jint</AssemblyName>
-    <Version>0.8.41-beta</Version>
+    <Version>0.10.0-beta</Version>
+    <FileVersion>0.10.0</FileVersion>
+    <AssemblyVersion>0.10.0</AssemblyVersion>
   </PropertyGroup>
   <Import Project="..\Transformalize.Transform.Jint.Shared\Transformalize.Transform.Jint.Shared.projitems" Label="Shared" />
   <ItemGroup>

@@ -3,7 +3,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Transformalize.Validators.Jint</RootNamespace>
     <AssemblyName>Transformalize.Validate.Jint</AssemblyName>
-    <Version>0.8.41-beta</Version>
+    <Version>0.10.0-beta</Version>
+    <FileVersion>0.10.0</FileVersion>
+    <AssemblyVersion>0.10.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Jint" Version="2.11.58" />
