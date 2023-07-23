@@ -1,7 +1,7 @@
 ﻿#region license
 // Transformalize
 // Configurable Extract, Transform, and Load
-// Copyright 2013-2022 Dale Newman
+// Copyright © 2013-2023 Dale Newman
 //  
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ namespace Transformalize.Validators.Jint {
 
       private readonly Field[] _input;
       private readonly Engine _jint = new Engine();
-      private readonly Dictionary<int, string> _errors = new Dictionary<int, string>();
       private readonly ParameterMatcher _parameterMatcher = new ParameterMatcher();
       private readonly bool _hasHelp;
 
@@ -82,7 +81,7 @@ namespace Transformalize.Validators.Jint {
          if (input.All(f => f.Alias != MessageField.Alias)) {
             input.Add(Context.Entity.GetAllFields().First(f => f.Alias == MessageField.Alias));
          }
-         _input = input.ToArray();         
+         _input = input.ToArray();
 
          if (Context.Process.Scripts.Any(s => s.Global && (s.Language == "js" || s.Language == Constants.DefaultSetting && s.File != null && s.File.EndsWith(".js", StringComparison.OrdinalIgnoreCase)))) {
             // load any global scripts
@@ -113,10 +112,17 @@ namespace Transformalize.Validators.Jint {
          // add maps (as objects)
          foreach (var map in Context.Process.Maps) {
             if (Context.Operation.Script.Contains(map.Name)) {
+#if V3
+               var obj = new JsObject(_jint);
+               foreach (var item in map.Items) {
+                  obj.FastSetDataProperty(item.From.ToString(), JsValue.FromObject(_jint, item.To));
+               }
+#else
                var obj = _jint.Object.Construct(new JsValue[0]);
-               foreach(var item in map.Items) {
+               foreach (var item in map.Items) {
                   obj.FastAddProperty(item.From.ToString(), JsValue.FromObject(_jint, item.To), false, true, false);
                }
+#endif
                _jint.SetValue(map.Name, obj);
             }
          }
@@ -129,10 +135,13 @@ namespace Transformalize.Validators.Jint {
             _jint.SetValue(field.Alias, row[field]);
          }
          try {
+#if V3
+            var value = _jint.Evaluate(Context.Operation.Script).ToObject();
+#else
             var value = _jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject();
-            if (value == null && !_errors.ContainsKey(0)) {
+#endif
+            if (value == null) {
                Context.Error($"Jint transform in {Context.Field.Alias} returns null!");
-               _errors[0] = $"Jint transform in {Context.Field.Alias} returns null!";
             } else {
                switch (value) {
                   case double resultDouble:
@@ -165,7 +174,7 @@ namespace Transformalize.Validators.Jint {
                         AppendResult(row, false);
                      } else {
                         var lower = resultString.ToLower();
-                        if(lower == "false" || lower == "0") {
+                        if (lower == "false" || lower == "0") {
                            AppendMessage(row, _hasHelp ? Context.Field.Help : _jint.GetValue(MessageField.Alias).ToString());
                            AppendResult(row, false);
                         } else {
@@ -182,14 +191,11 @@ namespace Transformalize.Validators.Jint {
                return row;
             }
          } catch (global::Jint.Runtime.JavaScriptException jse) {
-            if (!_errors.ContainsKey(jse.LineNumber)) {
-               Context.Error("Script: " + Context.Operation.Script.Replace("{", "{{").Replace("}", "}}"));
-               Context.Error(jse, "Error Message: " + jse.Message);
-               Context.Error("Variables:");
-               foreach (var field in _input) {
-                  Context.Error($"{field.Alias}:{row[field]}");
-               }
-               _errors[jse.LineNumber] = jse.Message;
+            Utility.CodeToError(Context, Context.Operation.Script);
+            Context.Error(jse, "Error Message: " + jse.Message);
+            Context.Error("Variables:");
+            foreach (var field in _input) {
+               Context.Error($"{field.Alias}:{row[field]}");
             }
          }
 

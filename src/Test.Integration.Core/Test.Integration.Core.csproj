@@ -5,11 +5,11 @@
 
     <IsPackable>false</IsPackable>
 
-    <Version>0.10.0-beta</Version>
+    <Version>0.10.2-beta</Version>
 
-    <FileVersion>0.10.0</FileVersion>
+    <FileVersion>0.10.2</FileVersion>
 
-    <AssemblyVersion>0.10.0</AssemblyVersion>
+    <AssemblyVersion>0.10.2</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,8 +20,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Transformalize.Container.Autofac" Version="0.10.0-beta" />
-    <PackageReference Include="Transformalize.Provider.Console.Autofac" Version="0.10.0-beta" />
+    <PackageReference Include="Transformalize" Version="0.10.12-beta" />
+    <PackageReference Include="Transformalize.Provider.Console" Version="0.10.5-beta" />
   </ItemGroup>
 
   <ItemGroup>

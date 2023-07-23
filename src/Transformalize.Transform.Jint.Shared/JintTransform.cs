@@ -1,7 +1,7 @@
 ﻿#region license
 // Transformalize
 // Configurable Extract, Transform, and Load
-// Copyright 2013-2022 Dale Newman
+// Copyright © 2013-2023 Dale Newman
 //  
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,7 +30,6 @@ namespace Transformalize.Transforms.Jint {
       private readonly Field[] _input;
       private readonly Engine _jint = new Engine();
       private readonly ParameterMatcher _parameterMatcher = new ParameterMatcher();
-      private readonly Dictionary<int, string> _errors = new Dictionary<int, string>();
 
       public JintTransform(IReader reader = null, IContext context = null) : base(context, null) {
 
@@ -122,27 +121,31 @@ namespace Transformalize.Transforms.Jint {
             if (tryFirst) {
                try {
                   tryFirst = false;
+#if V3
+                  var obj = _jint.Evaluate(Context.Operation.Script).ToObject();
+#else
                   var obj = _jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject();
+#endif
                   var value = obj == null ? null : Context.Field.Convert(obj);
-                  if (value == null && !_errors.ContainsKey(0)) {
+                  if (value == null) {
                      Context.Error($"Jint transform in {Context.Field.Alias} returns null!");
-                     _errors[0] = $"Jint transform in {Context.Field.Alias} returns null!";
                   } else {
                      row[Context.Field] = value;
                   }
                } catch (global::Jint.Runtime.JavaScriptException jse) {
-                  if (!_errors.ContainsKey(jse.LineNumber)) {
-                     Context.Error("Script: " + Context.Operation.Script.Replace("{", "{{").Replace("}", "}}"));
-                     Context.Error(jse, "Error Message: " + jse.Message);
-                     Context.Error("Variables:");
-                     foreach (var field in _input) {
-                        Context.Error($"{field.Alias}:{row[field]}");
-                     }
-                     _errors[jse.LineNumber] = jse.Message;
+                  Utility.CodeToError(Context, Context.Operation.Script);
+                  Context.Error(jse, "Error Message: " + jse.Message);
+                  Context.Error("Variables:");
+                  foreach (var field in _input) {
+                     Context.Error($"{field.Alias}:{row[field]}");
                   }
                }
             } else {
+#if V3
+               row[Context.Field] = Context.Field.Convert(_jint.Evaluate(Context.Operation.Script).ToObject());
+#else
                row[Context.Field] = Context.Field.Convert(_jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject());
+#endif
             }
 
             yield return row;

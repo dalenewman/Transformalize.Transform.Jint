@@ -10,16 +10,14 @@ namespace Transformalize.Transforms.Jint {
 
       public IEnumerable<string> Match(string script, IEnumerable<Field> available) {
 
-         var parser = new JavaScriptParser(script, new ParserOptions() { Tokens = true });
-
-         return parser.ParseScript()
-            .DescendantNodesAndSelf()
-            .Where(n => n.Type == Nodes.Identifier)
-            .Select(n => n.As<Identifier>())
-            .Select(i=>i.Name)
-            .Intersect(available.Select(f => f.Alias))
-            .Distinct()
-            .ToArray();
+         return new JavaScriptParser(new ParserOptions() { Tokens = true }).ParseScript(script)
+           .DescendantNodesAndSelf()
+           .Where(n => n.Type == Nodes.Identifier)
+           .Select(n => n.As<Identifier>())
+           .Select(i => i.Name)
+           .Intersect(available.Select(f => f.Alias))
+           .Distinct()
+           .ToArray();
       }
    }
 }

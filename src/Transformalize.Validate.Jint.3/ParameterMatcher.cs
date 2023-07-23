@@ -10,9 +10,7 @@ namespace Transformalize.Validators.Jint {
 
       public IEnumerable<string> Match(string script, IEnumerable<Field> available) {
 
-         var parser = new JavaScriptParser(script, new ParserOptions() { Tokens = true });
-
-         return parser.ParseScript()
+         return new JavaScriptParser(new ParserOptions() { Tokens = true }).ParseScript(script)
             .DescendantNodesAndSelf()
             .Where(n => n.Type == Nodes.Identifier)
             .Select(n => n.As<Identifier>())
