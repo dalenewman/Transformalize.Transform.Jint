@@ -1,82 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD3477B9-14E5-4EA3-90B0-CA9299BCAE73}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Transformalize.Transforms.Jint.Autofac</RootNamespace>
     <AssemblyName>Transformalize.Transform.Jint.Autofac</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <DebugSymbols>true</DebugSymbols>
+    <IncludeSymbols>true</IncludeSymbols>
+    <Version>0.10.3-beta</Version>
+    <PackageOutputPath>c:\temp\modules</PackageOutputPath>
+    <Authors>Dale Newman</Authors>
+    <Company>Transformalize</Company>
+    <Description>A Transformalize transform Autofac module using Jint 3+</Description>
+    <Copyright>Copyright © 2020-2024 Dale Newman</Copyright>
+    <PackageProjectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dalenewman/Transformalize.Transform.Jint.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>etl,transformalize,jint,javascript</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <FileVersion>0.10.3</FileVersion>
+    <AssemblyVersion>0.10.3</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="Transformalize, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.0.10.0-beta\lib\net462\Transformalize.dll</HintPath>
-    </Reference>
-    <Reference Include="Transformalize.Container.Autofac, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.Container.Autofac.0.10.0-beta\lib\net462\Transformalize.Container.Autofac.dll</HintPath>
-    </Reference>
+    <PackageReference Include="Transformalize.Container.Autofac" Version="0.10.12-beta" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>
+      </PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Transformalize.Transform.Jint\Transformalize.Transform.Jint.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Transformalize.Transform.Jint\Transformalize.Transform.Jint.csproj">
-      <Project>{4ed1e259-756a-40b8-9800-f563b59e0206}</Project>
-      <Name>Transformalize.Transform.Jint</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="..\Transformalize.Transform.Jint.Autofac.Shared\Transformalize.Transform.Jint.Autofac.Shared.projitems" Label="Shared" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>set f="$(SolutionDir)..\Transformalize\Pipeline.Command\plugins"
-
-if exist %25f%25 copy /Y "$(TargetDir)Jint.dll" "%25f%25"
-if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Jint.dll" "%25f%25"
-if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Jint.pdb" "%25f%25"
-if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Jint.dll" "%25f%25"
-if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Jint.pdb" "%25f%25"
-if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Jint.Autofac.dll" "%25f%25"
-if exist %25f%25 copy /Y "$(TargetDir)Transformalize.Transform.Jint.Autofac.pdb" "%25f%25"
-</PostBuildEvent>
-  </PropertyGroup>
 </Project>
