@@ -13,55 +13,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{8FE1844F
 	ProjectSection(SolutionItems) = preProject
 		nuget\myget.bat = nuget\myget.bat
 		nuget\nuget.bat = nuget\nuget.bat
-		nuget\Transformalize.Transform.Jint.3.Autofac.nuspec = nuget\Transformalize.Transform.Jint.3.Autofac.nuspec
-		nuget\Transformalize.Transform.Jint.3.nuspec = nuget\Transformalize.Transform.Jint.3.nuspec
 		nuget\Transformalize.Transform.Jint.Autofac.nuspec = nuget\Transformalize.Transform.Jint.Autofac.nuspec
 		nuget\Transformalize.Transform.Jint.nuspec = nuget\Transformalize.Transform.Jint.nuspec
-		nuget\Transformalize.Validate.Jint.3.Autofac.nuspec = nuget\Transformalize.Validate.Jint.3.Autofac.nuspec
-		nuget\Transformalize.Validate.Jint.3.nuspec = nuget\Transformalize.Validate.Jint.3.nuspec
 		nuget\Transformalize.Validate.Jint.Autofac.nuspec = nuget\Transformalize.Validate.Jint.Autofac.nuspec
 		nuget\Transformalize.Validate.Jint.nuspec = nuget\Transformalize.Validate.Jint.nuspec
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transform", "Transform", "{E316ACEC-CE40-4400-A12F-A30A5BB81AE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Jint", "src\Transformalize.Transform.Jint\Transformalize.Transform.Jint.csproj", "{1FEE06EF-A647-4464-A9C2-B22B44C9938E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transform.Autofac", "Transform.Autofac", "{3DEF0F42-FB16-4F0C-A5E8-F5A9C6AD78BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Validate.Jint", "src\Transformalize.Validate.Jint\Transformalize.Validate.Jint.csproj", "{70D51C6B-0304-4CC8-9B37-3108FA016FB7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validate", "Validate", "{BE79825B-C175-4D19-83CD-34F4E7395BAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Jint.Autofac", "src\Transformalize.Transform.Jint.Autofac\Transformalize.Transform.Jint.Autofac.csproj", "{B1102BF4-0847-415B-BE52-B76F755D2301}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validate.Autofac", "Validate.Autofac", "{639F65A4-AD41-44BB-B0A4-943F41284BFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Validate.Jint.Autofac", "src\Transformalize.Validate.Jint.Autofac\Transformalize.Validate.Jint.Autofac.csproj", "{AF749522-EB05-4166-8704-F7C3D517781F}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Transform.Jint.Shared", "src\Transformalize.Transform.Jint.Shared\Transformalize.Transform.Jint.Shared.shproj", "{5632BD72-6A39-4855-8C23-C931FF85143A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Integration.Core", "src\Test.Integration.Core\Test.Integration.Core.csproj", "{D66D2EFB-AE43-4453-9FA2-7920C2371503}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Jint.Standard.20", "src\Transformalize.Transform.Jint.Standard.20\Transformalize.Transform.Jint.Standard.20.csproj", "{43DE480E-DF0E-49AB-8461-21C007788087}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Validate.Jint.Shared", "src\Transformalize.Validate.Jint.Shared\Transformalize.Validate.Jint.Shared.shproj", "{393C840C-2154-4A5A-AD70-1209018982DB}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Transform.Jint.Autofac.Shared", "src\Transformalize.Transform.Jint.Autofac.Shared\Transformalize.Transform.Jint.Autofac.Shared.shproj", "{2E62C240-3318-48D5-8ED2-529C6B63E91C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Jint.Autofac.Standard.20", "src\Transformalize.Transform.Jint.Autofac.Standard.20\Transformalize.Transform.Jint.Autofac.Standard.20.csproj", "{6C253D9E-5524-480B-8BB6-570A86620C6F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Validate.Jint.Standard.20", "src\Transformalize.Validate.Jint.Standard.20\Transformalize.Validate.Jint.Standard.20.csproj", "{61494407-9CD9-4B56-BED4-50B4BCEC6870}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Validate.Jint.Autofac.Shared", "src\Transformalize.Validate.Jint.Autofac.Shared\Transformalize.Validate.Jint.Autofac.Shared.shproj", "{F9F6760E-1589-4F1A-A0F0-3AD7E019A404}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Validate.Jint.Autofac.Standard.20", "src\Transformalize.Validate.Jint.Autofac.Standard.20\Transformalize.Validate.Jint.Autofac.Standard.20.csproj", "{7ABA8FB4-4969-497E-A5E3-F74F4DC24E32}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Jint.3", "src\Transformalize.Transform.Jint.3\Transformalize.Transform.Jint.3.csproj", "{62BAF26E-23D3-4206-8AD1-CB354A550647}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Validate.Jint.3", "src\Transformalize.Validate.Jint.3\Transformalize.Validate.Jint.3.csproj", "{C8BDE647-50DC-476D-A178-D60D35F85564}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Jint.3.Autofac", "src\Transformalize.Transform.Jint.3.Autofac\Transformalize.Transform.Jint.3.Autofac.csproj", "{4174A106-FB43-409B-9012-2300CAFEA9F8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Validate.Jint.3.Autofac", "src\Transformalize.Validate.Jint.3.Autofac\Transformalize.Validate.Jint.3.Autofac.csproj", "{278797AF-9B35-4DBE-AF0C-9435D7D5605C}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Test.Integration.Shared", "test\Test.Integration.Shared\Test.Integration.Shared.shproj", "{74BB6996-13C0-49EA-B3A7-3AA5E03134E8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8B807627-E30C-47C5-8B61-8E2D1767354A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Integration.Core", "src\Test.Integration.Core\Test.Integration.Core.csproj", "{135A87FA-6545-4365-8E78-D637635C04B3}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Integration.Jint.v3.Core", "test\Test.Integration.Jint.v3.Core\Test.Integration.Jint.v3.Core.csproj", "{92D7FE4F-B713-4600-A381-32D03439E110}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmark", "src\Benchmark\Benchmark.csproj", "{CE548D01-83E7-49AB-B56E-AF4E152F3EBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,86 +37,38 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{43DE480E-DF0E-49AB-8461-21C007788087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43DE480E-DF0E-49AB-8461-21C007788087}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43DE480E-DF0E-49AB-8461-21C007788087}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43DE480E-DF0E-49AB-8461-21C007788087}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C253D9E-5524-480B-8BB6-570A86620C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C253D9E-5524-480B-8BB6-570A86620C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C253D9E-5524-480B-8BB6-570A86620C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C253D9E-5524-480B-8BB6-570A86620C6F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61494407-9CD9-4B56-BED4-50B4BCEC6870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61494407-9CD9-4B56-BED4-50B4BCEC6870}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61494407-9CD9-4B56-BED4-50B4BCEC6870}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61494407-9CD9-4B56-BED4-50B4BCEC6870}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7ABA8FB4-4969-497E-A5E3-F74F4DC24E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7ABA8FB4-4969-497E-A5E3-F74F4DC24E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7ABA8FB4-4969-497E-A5E3-F74F4DC24E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7ABA8FB4-4969-497E-A5E3-F74F4DC24E32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62BAF26E-23D3-4206-8AD1-CB354A550647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62BAF26E-23D3-4206-8AD1-CB354A550647}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62BAF26E-23D3-4206-8AD1-CB354A550647}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62BAF26E-23D3-4206-8AD1-CB354A550647}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C8BDE647-50DC-476D-A178-D60D35F85564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8BDE647-50DC-476D-A178-D60D35F85564}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8BDE647-50DC-476D-A178-D60D35F85564}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8BDE647-50DC-476D-A178-D60D35F85564}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4174A106-FB43-409B-9012-2300CAFEA9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4174A106-FB43-409B-9012-2300CAFEA9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4174A106-FB43-409B-9012-2300CAFEA9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4174A106-FB43-409B-9012-2300CAFEA9F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{278797AF-9B35-4DBE-AF0C-9435D7D5605C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{278797AF-9B35-4DBE-AF0C-9435D7D5605C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{278797AF-9B35-4DBE-AF0C-9435D7D5605C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{278797AF-9B35-4DBE-AF0C-9435D7D5605C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{135A87FA-6545-4365-8E78-D637635C04B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{135A87FA-6545-4365-8E78-D637635C04B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{135A87FA-6545-4365-8E78-D637635C04B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{135A87FA-6545-4365-8E78-D637635C04B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92D7FE4F-B713-4600-A381-32D03439E110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92D7FE4F-B713-4600-A381-32D03439E110}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92D7FE4F-B713-4600-A381-32D03439E110}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92D7FE4F-B713-4600-A381-32D03439E110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FEE06EF-A647-4464-A9C2-B22B44C9938E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FEE06EF-A647-4464-A9C2-B22B44C9938E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FEE06EF-A647-4464-A9C2-B22B44C9938E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FEE06EF-A647-4464-A9C2-B22B44C9938E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D51C6B-0304-4CC8-9B37-3108FA016FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D51C6B-0304-4CC8-9B37-3108FA016FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D51C6B-0304-4CC8-9B37-3108FA016FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D51C6B-0304-4CC8-9B37-3108FA016FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1102BF4-0847-415B-BE52-B76F755D2301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1102BF4-0847-415B-BE52-B76F755D2301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1102BF4-0847-415B-BE52-B76F755D2301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1102BF4-0847-415B-BE52-B76F755D2301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF749522-EB05-4166-8704-F7C3D517781F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF749522-EB05-4166-8704-F7C3D517781F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF749522-EB05-4166-8704-F7C3D517781F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF749522-EB05-4166-8704-F7C3D517781F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D66D2EFB-AE43-4453-9FA2-7920C2371503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D66D2EFB-AE43-4453-9FA2-7920C2371503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D66D2EFB-AE43-4453-9FA2-7920C2371503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D66D2EFB-AE43-4453-9FA2-7920C2371503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE548D01-83E7-49AB-B56E-AF4E152F3EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE548D01-83E7-49AB-B56E-AF4E152F3EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE548D01-83E7-49AB-B56E-AF4E152F3EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE548D01-83E7-49AB-B56E-AF4E152F3EBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8FE1844F-26A4-47BE-9507-F0333D42FABE} = {C4563C88-9C80-4BD0-949E-AA64F111957E}
-		{5632BD72-6A39-4855-8C23-C931FF85143A} = {E316ACEC-CE40-4400-A12F-A30A5BB81AE3}
-		{43DE480E-DF0E-49AB-8461-21C007788087} = {E316ACEC-CE40-4400-A12F-A30A5BB81AE3}
-		{393C840C-2154-4A5A-AD70-1209018982DB} = {BE79825B-C175-4D19-83CD-34F4E7395BAB}
-		{2E62C240-3318-48D5-8ED2-529C6B63E91C} = {3DEF0F42-FB16-4F0C-A5E8-F5A9C6AD78BC}
-		{6C253D9E-5524-480B-8BB6-570A86620C6F} = {3DEF0F42-FB16-4F0C-A5E8-F5A9C6AD78BC}
-		{61494407-9CD9-4B56-BED4-50B4BCEC6870} = {BE79825B-C175-4D19-83CD-34F4E7395BAB}
-		{F9F6760E-1589-4F1A-A0F0-3AD7E019A404} = {639F65A4-AD41-44BB-B0A4-943F41284BFE}
-		{7ABA8FB4-4969-497E-A5E3-F74F4DC24E32} = {639F65A4-AD41-44BB-B0A4-943F41284BFE}
-		{62BAF26E-23D3-4206-8AD1-CB354A550647} = {E316ACEC-CE40-4400-A12F-A30A5BB81AE3}
-		{C8BDE647-50DC-476D-A178-D60D35F85564} = {BE79825B-C175-4D19-83CD-34F4E7395BAB}
-		{4174A106-FB43-409B-9012-2300CAFEA9F8} = {3DEF0F42-FB16-4F0C-A5E8-F5A9C6AD78BC}
-		{278797AF-9B35-4DBE-AF0C-9435D7D5605C} = {639F65A4-AD41-44BB-B0A4-943F41284BFE}
-		{74BB6996-13C0-49EA-B3A7-3AA5E03134E8} = {8B807627-E30C-47C5-8B61-8E2D1767354A}
-		{135A87FA-6545-4365-8E78-D637635C04B3} = {8B807627-E30C-47C5-8B61-8E2D1767354A}
-		{92D7FE4F-B713-4600-A381-32D03439E110} = {8B807627-E30C-47C5-8B61-8E2D1767354A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {960FC2FA-8CAD-47A3-8A4E-4173AE406E71}
-	EndGlobalSection
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		test\Test.Integration.Shared\Test.Integration.Shared.projitems*{135a87fa-6545-4365-8e78-d637635c04b3}*SharedItemsImports = 5
-		src\Transformalize.Validate.Jint.Autofac.Shared\Transformalize.Validate.Jint.Autofac.Shared.projitems*{278797af-9b35-4dbe-af0c-9435d7d5605c}*SharedItemsImports = 5
-		src\Transformalize.Transform.Jint.Autofac.Shared\Transformalize.Transform.Jint.Autofac.Shared.projitems*{2e62c240-3318-48d5-8ed2-529c6b63e91c}*SharedItemsImports = 13
-		src\Transformalize.Validate.Jint.Shared\Transformalize.Validate.Jint.Shared.projitems*{393c840c-2154-4a5a-ad70-1209018982db}*SharedItemsImports = 13
-		src\Transformalize.Transform.Jint.Autofac.Shared\Transformalize.Transform.Jint.Autofac.Shared.projitems*{4174a106-fb43-409b-9012-2300cafea9f8}*SharedItemsImports = 5
-		src\Transformalize.Transform.Jint.Shared\Transformalize.Transform.Jint.Shared.projitems*{43de480e-df0e-49ab-8461-21c007788087}*SharedItemsImports = 5
-		src\Transformalize.Transform.Jint.Shared\Transformalize.Transform.Jint.Shared.projitems*{5632bd72-6a39-4855-8c23-c931ff85143a}*SharedItemsImports = 13
-		src\Transformalize.Validate.Jint.Shared\Transformalize.Validate.Jint.Shared.projitems*{61494407-9cd9-4b56-bed4-50b4bcec6870}*SharedItemsImports = 5
-		src\Transformalize.Transform.Jint.Shared\Transformalize.Transform.Jint.Shared.projitems*{62baf26e-23d3-4206-8ad1-cb354a550647}*SharedItemsImports = 5
-		src\Transformalize.Transform.Jint.Autofac.Shared\Transformalize.Transform.Jint.Autofac.Shared.projitems*{6c253d9e-5524-480b-8bb6-570a86620c6f}*SharedItemsImports = 5
-		test\Test.Integration.Shared\Test.Integration.Shared.projitems*{74bb6996-13c0-49ea-b3a7-3aa5e03134e8}*SharedItemsImports = 13
-		src\Transformalize.Validate.Jint.Autofac.Shared\Transformalize.Validate.Jint.Autofac.Shared.projitems*{7aba8fb4-4969-497e-a5e3-f74f4dc24e32}*SharedItemsImports = 5
-		test\Test.Integration.Shared\Test.Integration.Shared.projitems*{92d7fe4f-b713-4600-a381-32d03439e110}*SharedItemsImports = 5
-		src\Transformalize.Validate.Jint.Shared\Transformalize.Validate.Jint.Shared.projitems*{c8bde647-50dc-476d-a178-d60d35f85564}*SharedItemsImports = 5
-		src\Transformalize.Validate.Jint.Autofac.Shared\Transformalize.Validate.Jint.Autofac.Shared.projitems*{f9f6760e-1589-4f1a-a0f0-3ad7e019a404}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

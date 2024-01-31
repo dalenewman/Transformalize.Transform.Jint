@@ -3,32 +3,25 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <IncludeSymbols>true</IncludeSymbols>
     <RootNamespace>Transformalize.Transforms.Jint</RootNamespace>
-    <AssemblyName>Transformalize.Transform.Jint.3</AssemblyName>
-    <Version>0.10.2-beta</Version>
+    <AssemblyName>Transformalize.Transform.Jint</AssemblyName>
+    <Version>0.10.3-beta</Version>
     <PackageOutputPath>c:\temp\modules</PackageOutputPath>
     <Authors>Dale Newman</Authors>
     <Company>Transformalize</Company>
     <Description>A Transformalize transform using Jint</Description>
-    <Copyright>Copyright © 2020-2023 Dale Newman</Copyright>
+    <Copyright>Copyright © 2020-2024 Dale Newman</Copyright>
     <PackageProjectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dalenewman/Transformalize.Transform.Jint.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>etl,transformalize,jint,javascript</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <FileVersion>0.10.2</FileVersion>
-    <AssemblyVersion>0.10.2</AssemblyVersion>
+    <FileVersion>0.10.3</FileVersion>
+    <AssemblyVersion>0.10.3</AssemblyVersion>
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-      <DefineConstants>$(DefineConstants);V3</DefineConstants>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-      <DefineConstants>$(DefineConstants);V3</DefineConstants>
-   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Jint" Version="3.0.0-beta-2049" />
+    <PackageReference Include="Jint" Version="3.0.0-beta-2058" />
     <PackageReference Include="Transformalize" Version="0.10.12-beta" />
   </ItemGroup>
-  <Import Project="..\Transformalize.Transform.Jint.Shared\Transformalize.Transform.Jint.Shared.projitems" Label="Shared" />
 </Project>

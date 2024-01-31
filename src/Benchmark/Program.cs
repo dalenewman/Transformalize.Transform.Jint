@@ -11,8 +11,6 @@ using NullLogger = Transformalize.Logging.NullLogger;
 
 namespace Benchmark {
 
-
-   [LegacyJitX64Job]
    public class Benchmarks {
 
       private readonly IPipelineLogger _logger = new NullLogger();
@@ -52,10 +50,8 @@ namespace Benchmark {
    }
 
    public class Program {
-
       private static void Main(string[] args) {
-         var config = DefaultConfig.Instance.With(ConfigOptions.DisableOptimizationsValidator);
-         BenchmarkRunner.Run<Benchmarks>(config);
+         BenchmarkRunner.Run<Benchmarks>(ManualConfig.Create(DefaultConfig.Instance).WithOptions(ConfigOptions.DisableOptimizationsValidator));
       }
    }
    

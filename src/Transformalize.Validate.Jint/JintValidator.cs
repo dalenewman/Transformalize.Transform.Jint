@@ -112,17 +112,10 @@ namespace Transformalize.Validators.Jint {
          // add maps (as objects)
          foreach (var map in Context.Process.Maps) {
             if (Context.Operation.Script.Contains(map.Name)) {
-#if V3
                var obj = new JsObject(_jint);
                foreach (var item in map.Items) {
                   obj.FastSetDataProperty(item.From.ToString(), JsValue.FromObject(_jint, item.To));
                }
-#else
-               var obj = _jint.Object.Construct(new JsValue[0]);
-               foreach (var item in map.Items) {
-                  obj.FastAddProperty(item.From.ToString(), JsValue.FromObject(_jint, item.To), false, true, false);
-               }
-#endif
                _jint.SetValue(map.Name, obj);
             }
          }
@@ -135,11 +128,7 @@ namespace Transformalize.Validators.Jint {
             _jint.SetValue(field.Alias, row[field]);
          }
          try {
-#if V3
             var value = _jint.Evaluate(Context.Operation.Script).ToObject();
-#else
-            var value = _jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject();
-#endif
             if (value == null) {
                Context.Error($"Jint transform in {Context.Field.Alias} returns null!");
             } else {

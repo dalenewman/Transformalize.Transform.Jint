@@ -121,11 +121,7 @@ namespace Transformalize.Transforms.Jint {
             if (tryFirst) {
                try {
                   tryFirst = false;
-#if V3
                   var obj = _jint.Evaluate(Context.Operation.Script).ToObject();
-#else
-                  var obj = _jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject();
-#endif
                   var value = obj == null ? null : Context.Field.Convert(obj);
                   if (value == null) {
                      Context.Error($"Jint transform in {Context.Field.Alias} returns null!");
@@ -141,11 +137,7 @@ namespace Transformalize.Transforms.Jint {
                   }
                }
             } else {
-#if V3
                row[Context.Field] = Context.Field.Convert(_jint.Evaluate(Context.Operation.Script).ToObject());
-#else
-               row[Context.Field] = Context.Field.Convert(_jint.Execute(Context.Operation.Script).GetCompletionValue().ToObject());
-#endif
             }
 
             yield return row;

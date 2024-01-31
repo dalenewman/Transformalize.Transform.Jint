@@ -1,34 +1,46 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+   <PropertyGroup>
+      <TargetFramework>net8.0</TargetFramework>
 
-    <IsPackable>false</IsPackable>
+      <IsPackable>false</IsPackable>
 
-    <Version>0.10.2-beta</Version>
+      <Version>0.10.3-beta</Version>
 
-    <FileVersion>0.10.2</FileVersion>
+      <FileVersion>0.10.3</FileVersion>
 
-    <AssemblyVersion>0.10.2</AssemblyVersion>
-  </PropertyGroup>
+      <AssemblyVersion>0.10.3</AssemblyVersion>
+   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
-    <PackageReference Include="coverlet.collector" Version="3.1.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Transformalize" Version="0.10.12-beta" />
-    <PackageReference Include="Transformalize.Provider.Console" Version="0.10.5-beta" />
-  </ItemGroup>
+   <ItemGroup>
+     <None Remove="scripts\function.js" />
+     <None Remove="scripts\script.js" />
+   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Transformalize.Transform.Jint.Autofac.Standard.20\Transformalize.Transform.Jint.Autofac.Standard.20.csproj" />
-    <ProjectReference Include="..\Transformalize.Validate.Jint.Autofac.Standard.20\Transformalize.Validate.Jint.Autofac.Standard.20.csproj" />
-  </ItemGroup>
+   <ItemGroup>
+     <Content Include="scripts\function.js">
+       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+     </Content>
+     <Content Include="scripts\script.js">
+       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+     </Content>
+   </ItemGroup>
 
-  <Import Project="..\..\test\Test.Integration.Shared\Test.Integration.Shared.projitems" Label="Shared" />
+   <ItemGroup>
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0-preview-24080-01" />
+      <PackageReference Include="MSTest.TestAdapter" Version="3.2.0" />
+      <PackageReference Include="MSTest.TestFramework" Version="3.2.0" />
+      <PackageReference Include="coverlet.collector" Version="6.0.0">
+         <PrivateAssets>all</PrivateAssets>
+         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Transformalize" Version="0.10.12-beta" />
+      <PackageReference Include="Transformalize.Provider.Console" Version="0.10.5-beta" />
+   </ItemGroup>
+
+   <ItemGroup>
+     <ProjectReference Include="..\Transformalize.Transform.Jint.Autofac\Transformalize.Transform.Jint.Autofac.csproj" />
+     <ProjectReference Include="..\Transformalize.Validate.Jint.Autofac\Transformalize.Validate.Jint.Autofac.csproj" />
+   </ItemGroup>
 
 </Project>
