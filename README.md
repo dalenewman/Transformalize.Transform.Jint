@@ -1,6 +1,6 @@
 ﻿### Overview
 
-This adds a `jint` (javascript) transform to Transformalize using [Jint](https://github.com/sebastienros/jint).  
+This adds a `jint` (javascript) transform to Transformalize using [Jint](https://github.com/sebastienros/jint) and [Esprima Dotnet](https://github.com/sebastienros/esprima-dotnet).
 
 Documentation will be written in the near future by AI 👌.  For now, see [Tests](src/Test.Integration.Core).
 
@@ -29,15 +29,15 @@ This produces `SomethingWonderful 2`
 
 ### Benchmark
 
-```ini
-BenchmarkDotNet v0.13.12, Windows 11 (10.0.22621.3007/22H2/2022Update/SunValley2)
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4602/23H2/2023Update/SunValley3)
 AMD Ryzen 7 5800X, 1 CPU, 16 logical and 8 physical cores
-.NET SDK 8.0.101
-  [Host]     : .NET 8.0.1 (8.0.123.58001), X64 RyuJIT AVX2
-  DefaultJob : .NET 8.0.1 (8.0.123.58001), X64 RyuJIT AVX2
+.NET SDK 9.0.101
+  [Host]     : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
+  DefaultJob : .NET 8.0.11 (8.0.1124.51707), X64 RyuJIT AVX2
 ```
 | Method                        | Mean     | Error   | StdDev  | Ratio | RatioSD |
 |------------------------------ |---------:|--------:|--------:|------:|--------:|
-| &#39;5000 rows&#39;                   | 108.4 ms | 1.13 ms | 1.06 ms |  1.00 |    0.00 |
-| &#39;5000 rows 1 jint&#39;            | 132.5 ms | 1.19 ms | 1.11 ms |  1.22 |    0.02 |
-| &#39;5000 rows 1 jint with dates&#39; | 141.1 ms | 2.10 ms | 1.86 ms |  1.30 |    0.02 |
+| &#39;5000 rows&#39;                   | 108.8 ms | 1.08 ms | 0.90 ms |  1.00 |    0.01 |
+| &#39;5000 rows 1 jint&#39;            | 130.6 ms | 0.98 ms | 0.92 ms |  1.20 |    0.01 |
+| &#39;5000 rows 1 jint with dates&#39; | 139.8 ms | 1.70 ms | 1.59 ms |  1.28 |    0.02 |

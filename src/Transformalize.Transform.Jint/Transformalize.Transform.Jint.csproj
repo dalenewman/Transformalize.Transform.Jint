@@ -1,27 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <IncludeSymbols>true</IncludeSymbols>
-    <RootNamespace>Transformalize.Transforms.Jint</RootNamespace>
-    <AssemblyName>Transformalize.Transform.Jint</AssemblyName>
-    <Version>0.10.3-beta</Version>
-    <PackageOutputPath>c:\temp\modules</PackageOutputPath>
-    <Authors>Dale Newman</Authors>
-    <Company>Transformalize</Company>
-    <Description>A Transformalize transform using Jint</Description>
-    <Copyright>Copyright © 2020-2024 Dale Newman</Copyright>
-    <PackageProjectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/dalenewman/Transformalize.Transform.Jint.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>etl,transformalize,jint,javascript</PackageTags>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <FileVersion>0.10.3</FileVersion>
-    <AssemblyVersion>0.10.3</AssemblyVersion>
-    <LangVersion>9.0</LangVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Jint" Version="3.0.0-beta-2058" />
-    <PackageReference Include="Transformalize" Version="0.10.12-beta" />
-  </ItemGroup>
+   <PropertyGroup>
+      <TargetFramework>netstandard2.0</TargetFramework>
+      <IncludeSymbols>true</IncludeSymbols>
+      <RootNamespace>Transformalize.Transforms.Jint</RootNamespace>
+      <AssemblyName>Transformalize.Transform.Jint</AssemblyName>
+      <Version>0.11.1-beta</Version>
+      <PackageOutputPath>c:\temp\modules</PackageOutputPath>
+      <Authors>Dale Newman</Authors>
+      <Company>Transformalize</Company>
+      <Description>A Transformalize transform using Jint</Description>
+      <Copyright>Copyright © 2020-2025 Dale Newman</Copyright>
+      <PackageProjectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</PackageProjectUrl>
+      <RepositoryUrl>https://github.com/dalenewman/Transformalize.Transform.Jint.git</RepositoryUrl>
+      <RepositoryType>git</RepositoryType>
+      <PackageTags>etl,transformalize,jint,javascript</PackageTags>
+      <NeutralLanguage>en-US</NeutralLanguage>
+      <PackageLicenseFile>LICENSE</PackageLicenseFile>
+      <FileVersion>0.11.1</FileVersion>
+      <AssemblyVersion>0.11.1</AssemblyVersion>
+      <LangVersion>9.0</LangVersion>
+   </PropertyGroup>
+   <ItemGroup>
+      <PackageReference Include="Esprima" Version="3.0.5" />
+      <PackageReference Include="Jint" Version="4.1.0" />
+      <PackageReference Include="Transformalize" Version="0.11.1-beta" />
+   </ItemGroup>
 </Project>
