@@ -1,4 +1,4 @@
-﻿using Esprima;
+﻿using Acornima;
 using Transformalize.Contracts;
 
 namespace Transformalize.Validators.Jint {
@@ -6,7 +6,6 @@ namespace Transformalize.Validators.Jint {
    public class ScriptTester {
 
       private readonly IContext _context;
-      private readonly ParserOptions _parserOptions = new ParserOptions { Tolerant = true };
 
       public ScriptTester(IContext context) {
          _context = context;
@@ -14,8 +13,8 @@ namespace Transformalize.Validators.Jint {
 
       public bool Passes(string script) {
          try {
-            var program = new JavaScriptParser(_parserOptions).ParseScript(script);
-         } catch (ParserException ex) {
+            var program = new Parser().ParseScript(script);
+         } catch (ParseErrorException ex) {
             _context.Error(ex.Message);
             Utility.CodeToError(_context, script);
             return false;

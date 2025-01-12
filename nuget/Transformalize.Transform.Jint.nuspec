@@ -2,7 +2,7 @@
 <package>
    <metadata>
       <id>Transformalize.Transform.Jint</id>
-      <version>0.11.1-beta</version>
+      <version>0.11.2-beta</version>
       <title>Transformalize Transform using Jint</title>
       <authors>Dale Newman</authors>
       <owners>Dale Newman</owners>
@@ -10,13 +10,12 @@
       <projectUrl>https://github.com/dalenewman/Transformalize.Transform.Jint</projectUrl>
       <requireLicenseAcceptance>false</requireLicenseAcceptance>
       <description>Transformalize Transform using Jint</description>
-      <releaseNotes>update for orchard core 2.1.3</releaseNotes>
+      <releaseNotes>remove esprima</releaseNotes>
       <copyright>Copyright © 2018-2025</copyright>
       <tags>etl</tags>
       <dependencies>
          <group targetFramework="netstandard2.0">
             <dependency id="Transformalize" version="0.11.1-beta" />
-            <dependency id="Esprima" version="3.0.5" />
             <dependency id="Jint" version="4.1.0" />
          </group>
       </dependencies>
